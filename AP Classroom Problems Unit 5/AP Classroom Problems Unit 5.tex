@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+\usepackage[paper=letterpaper,margin=2cm]{geometry}
+
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+
+\setlength{\droptitle}{-6em}
+\everymath{\displaystyle}
+
+\title{AP Classroom Problems Unit 4}
+\author{Aiden Rosenberg}
+\date{November 28, 2022 A.D}
+
+\begin{document}
+\newcommand*\Heq{\overset{\mathrm{H}}{=}}
+
+\maketitle
+
+\section*{5.01}
+\begin{enumerate}
+    \item If $a$ and $b$ are positive constants, then $\lim_{x\to\infty}\frac{\ln(bx+1)}{\ln(ax^2+3)}$
+    \begin{enumerate}
+        \item $\frac{d}{dx}\bigg(\ln(bx+1)\bigg) = \frac{b}{bx+1}$
+         \item $\frac{d}{dx}\bigg(\ln(ax^2+3)\bigg) = \frac{2ax}{ax^2+3}$ 
+    \end{enumerate}
+    
+    $$\lim_{x\to\infty}\frac{\ln(bx+1)}{\ln(ax^2+3)} \Heq \lim_{x\to\infty} \frac{b(ax^2+3)}{2ax(bx+1)} = \lim_{x\to\infty} \frac{abx^2+3b}{2abx^2+2ax} \Heq$$ 
+    $$\lim_{x\to\infty} \frac{2abx}{4abx+2a} = \lim_{x\to\infty} =\frac{bx}{2bx+1} \Heq \lim_{x\to\infty} \frac{b}{2b} = \boxed{\frac{1}{2}}$$
+    \begin{center}
+        \textbf{OR}
+    \end{center}
+    \begin{enumerate}
+        \item  $\ln(bx+1) \sim \ln bx - \ln x + \ln b \sim \ln x$
+        \item $\ln(ax^2+3)\sim \ln(ax^2)=(\ln x^2+\ln a)\sim \ln x^2 = 2\ln x$
+    \end{enumerate}
+   
+   $$\Longrightarrow \lim_{x\to\infty}\frac{\ln(bx+1)}{\ln(ax^2+3)} = \lim_{x\to\infty} \frac{\ln x}{2\ln x} = \boxed{\frac{1}{2}}$$
+    
+    
+    \item What is the $\lim_{x\to0}\frac{x^2}{1-\cos x}$?
+   $$\lim_{x\to0}\frac{x^2}{1-\cos x} \Heq \lim_{x\to0} \frac{2x}{\sin(x)} \Heq \lim_{x\to0} \frac{2}{\cos x}= \boxed{2}$$
+   
+    \item What is the $\lim_{x\to\infty}\frac{x^3}{e^{3x}}$?
+$$\lim_{x\to\infty}\frac{x^3}{e^{3x}} \Heq\lim_{x\to\infty} \frac{3x^2}{3e^{3x}}\Heq\lim_{x\to\infty} \frac{6x}{9e^{3x}} \Heq\lim_{x\to\infty}\frac{6}{27e^{3x}}  =  \frac{2}{9}\lim_{x\to\infty}\frac{1}{e^{3x}} \Heq \frac{2}{9} \cdot \frac{1}{\infty} = \boxed{0}$$
+    
+    \item What is the $\lim_{x\to\frac{\pi}{2}}\frac{3\cos x}{2x-\pi}$?
+$$\lim_{x\to\frac{\pi}{2}}\frac{3\cos x}{2x-\pi} \Heq \frac{-3\sin x}{2}=\boxed{\frac{-3}{2}}$$
+    
+    \item What is the $\lim_{x\to0}\frac{6e^{4x}-2e^{3x}-4}{\sin(2x)}$?
+   $$\lim_{x\to0}\frac{6e^{4x}-2e^{3x}-4}{\sin(2x)} \Heq \lim_{x\to0} \frac{24e^{4x}-6e^{3x}}{2\cos 2x} =\boxed{9}$$
+    \item Let $f$ be the function defined by $f(x)=2x+3e^{-5x}$, and let $g$ be a differentiable function with derivative given by $g'(x)=\frac{1}{x}+4\cos(5x)$. It is known that $\lim_{x\to\infty}g(x) =\infty$. What is the value of $\lim_{x\to\infty}\frac{f(x)}{g(x)}$?
+$$\lim_{x\to\infty}\frac{f(x)}{g(x)} \Heq \lim_{x\to\infty}\frac{f'(x)}{g'(x)} = \lim_{x\to\infty} \frac{2-\frac{15}{e^{5x}}}{\frac{1}{x}+4\cos(5x)}= \frac{2}{4}=\boxed{\frac{1}{2}}$$
+    
+    \item What is the $\lim_{t\to0}\frac{\sin t}{\ln(2e^t-1)}$?
+$$\lim_{t\to0}\frac{\sin t}{\ln(2e^t-1)} \Heq \lim_{t\to0} \frac{\cos (t) \cdot(2e^t-1)}{2e^t} =\boxed{\frac{1}{2}}$$
+    
+    \item What is the $\lim_{x\to1}\frac{x^2-1}{\sin(\pi x)}$?
+   $$\lim_{x\to1}\frac{x^2-1}{\sin(\pi x)} \Heq \lim_{x\to1} \frac{2x}{\pi\cos(\pi x)} = \boxed{-\frac{2}{\pi}}$$
+   
+    \item What is the $\lim_{\theta\to0}\frac{1-\cos \theta}{2\sin^2 \theta}$?
+$$\lim_{\theta\to0}\frac{1-\cos \theta}{2\sin^2 \theta}\Heq \lim_{\theta \to 0}\frac{\sin \theta}{4 \sin \theta \cdot \cos \theta} \Heq \lim_{\theta \to 0} \frac{\cos \theta}{4\big(\cos^2 \theta -\sin^2\theta\big)} =\boxed{\frac{1}{4}}$$
+    
+    \item Let $f$ and $g$ be functions that are differentiable for all real numbers, with $g(x)\neq 0$ for $x\neq0$. If $\lim_{x\to0}f(x)=\lim_{x\to0}g(x)=0$ and $\lim_{x\to0}\frac{f'(x)}{g'(x)}$ exists. What then is the $\lim_{x\to0}\frac{f(x)}{g(x)}$?
+$$\lim_{x\to0}\frac{f(x)}{g(x)}  \Heq \boxed{\lim_{x\to0}\frac{f'(x)}{g'(x)}}$$
+    
+    \item What is the $\lim_{x\to 0} \frac{\sin x \cos x}{x}$?
+$$\lim_{x\to 0} \frac{\sin x \cos x}{x} \Heq \lim_{x\to 0} \frac{\cos^2 x-\sin^2 x}{1} = \boxed{1}$$
+    
+    \item Let $g$ be a continuously differentiable function with $g(1)=6$ and $g'(1)=3$. What is the $\lim_{x\to1}\frac{\int_{1}^{x} g(t) \,dt}{g(x)-6}$?
+    
+    $$\lim_{x\to1}\frac{\int_{1}^{x} g(t) \,dt}{g(x)-6} \Heq \lim_{x\to1}\frac{\frac{d}{dx}\biggr(\int_{1}^{x} g(t) \,dt\biggr)}{\frac{d}{dx}\biggr(g(x)\biggr)}=\lim_{x\to1}\frac{g(x)}{g'(x)}= \frac{6}{3}=\boxed{2}$$
+    
+    \item If $f$ is the function defined by $f(x)=\frac{x^2-4}{\sqrt{x}-\sqrt{2}}$, then $\lim_{x\to2}f(x)$ is equivalent to which of the following?
+    $$f(x)=\frac{x^2-4}{\sqrt{x}-\sqrt{2}} \cdot \frac{\sqrt{x}+\sqrt{2}}{\sqrt{x}+\sqrt{2}} = (x+2)(\sqrt{x}+\sqrt{2})$$
+    $$\boxed{\lim_{x\to2}f(x)= \lim_{x\to2} (x+2)(\sqrt{x}+\sqrt{2}) }$$
+    \item Let $g$ and $h$ be the functions defined by $g(x)=-2x^2+4x+1$ and $h(x)=\frac{x^2}{2}-x+\frac{11}{2}$. If $f$ is a function that satisfies $g(x)\leq f(x)\leq h(x)$ for all $x$, what is $\lim_{x\to1}f(x)$?
+\begin{enumerate}
+    \item $\lim_{x\to1}g(x)=3$
+    \item $\lim_{x\to1}h(x)=5$
+\end{enumerate}
+$$3 \leq \lim_{x\to1}f(x) \leq 5$$
+$$\boxed{\text{The limit cannot be determined from the information given.}}$$
+    
+    \item Let $f$, $g$, and $h$ be the functions defined by $f(x)=\frac{\sin x}{2x}$, $g(x)=x^4\cos\bigg(\frac{1}{x^2}\bigg)$, and $h(x)=\frac{x^2}{\tan x}$ for $x\neq0$. All of the following inequalities are true on the interval $[-1,1]$ for $x\neq0$. Which of the inequalities can be used with the squeeze theorem to find the limit of the function as $x$ approaches 0?
+    \begin{enumerate}[label=\Roman*.]
+        \item $\frac{1}{4} \leq f(x) \leq x^2+\frac{1}{2}$: \textbf{False} $\because \frac{1}{4} \neq \underbrace{\lim_{x\to 0} (x^2+0.5)}_ {\frac{1}{2}}$
+        \item $-x^4\leq g(x)\leq x^4$: \textbf{True} $\because \lim_{x\to 0} -x^4=\lim_{x\to 0} x^4=0$
+        \item $\frac{-1}{x^2}\leq h(x) \leq \frac{1}{x^2}$: \textbf{False} $\because \underbrace{\lim_{x\to 0} \frac{-1}{x^2}}_{-\infty}  \neq \underbrace{\lim_{x\to 0} \frac{1}{x^2}}_{\infty}$
+    \end{enumerate}
+    $$\boxed{\text{II only}}$$
+\end{enumerate}
+\section*{5.02}
+\begin{enumerate}
+    \item Let $R$ be the region between the graph of $y=e^{-2x}$ and the $x$-axis for $x\geq3$. What is the area of $R$?
+    $$R=\int_{3}^{\infty} e^{-2x}\, dx =\lim_{a\to\infty} \int_{3}^{a} e^{-2x}\, dx = \lim_{a\to\infty} \frac{-1}{2e^{2x}}\biggr\rvert_{3}^{a} =\frac{1}{2e^6}+\underbrace{\lim_{a\to\infty} \frac{1}{2e^{2a}}}_{0} = \boxed{\frac{1}{2e^6}}$$
+    
+    \item What is the $\int_{1}^{\infty} \frac{x}{\big(1+x^2\big)^2}\, dx$?
+    $$\int_{1}^{\infty} \frac{x}{\big(1+x^2\big)^2}\, dx = \lim_{a\to\infty} \int_{1}^{a}\frac{x}{\big(1+x^2\big)^2}\, dx = \lim_{a\to\infty} \frac{-1}{2(1+x^2)}\biggr\rvert_{1}^{a} = \frac{1}{4}-\underbrace{\lim_{a\to\infty}\frac{1}{2(1+a^2)} }_{0} = \boxed{\frac{1}{4}}$$
+    \item What is the $\int_{1}^{\infty} xe^{-x^2} \, dx$?
+    $$\int_{1}^{\infty} xe^{-x^2} \, dx = \lim_{a\to\infty}\int_{1}^{a} xe^{-x^2} \, dx = \lim_{a\to\infty} \frac{-1}{2e^{x^2}}\biggr\rvert_{1}^{a} = \frac{1}{2e}+\underbrace{\lim_{a\to\infty}\frac{1}{2e^{a^2}}}_{0} =\boxed{\frac{1}{2e}}$$
+    \item What is the $\int_{1}^{\infty} \frac{x^2}{\big(x^3+2\big)}\, dx$?
+$$\int_{1}^{\infty} \frac{x^2}{\big(x^3+2\big)} \, dx = \lim_{a\to\infty}\int_{1}^{a} \frac{x^2}{\big(x^3+2\big)} \, dx = \lim_{a\to\infty} \frac{-1}{3(x^3+2)^2}\biggr\rvert_{1}^{a} = \frac{1}{9}-\underbrace{\lim_{a\to\infty}\frac{1}{3(a^3+2)}}_{0} =\boxed{\frac{1}{9}}$$
+    
+    \item If $\int_{1}^{x} f(t)\,dt = \frac{20x}{\sqrt{4x^2+21}}-4$, then $\int_{1}^{\infty} f(t)\,dt$ is
+   $$\int_{1}^{\infty} f(t)\,dt= \lim_{a\to\infty}\frac{20x}{\sqrt{4x^2+21}} \biggr\rvert_{1}^{a} = \lim_{a\to \infty} \biggr(\frac{20a}{\sqrt{4a^2+21}} \biggr) -\underbrace{\biggr(\frac{20}{\sqrt{21+4}}}_{4} \biggr)$$
+   \begin{enumerate}
+       \item $\lim_{a\to \infty}\frac{20a}{\sqrt{4a^2+21}} = \lim_{a\to \infty}\frac{20}{\sqrt{4+\underbrace{\frac{21}{a^2}}_{0}}} = \frac{20}{\sqrt{4}}=10$
+    
+   \end{enumerate}
+   $$ \underbrace{\lim_{a\to \infty}\frac{20a}{\sqrt{4a^2+21}}}_{10}-4=\boxed{6} $$
+    \item If $R$ is the unbounded region between the graph of $y=\frac{1}{x\ln^2 x}$ and the $x$-axis for $x\geq3$, then the area of $R$ is
+ $$R=\int_{3}^{\infty} \frac{1}{x\ln^2 x}\, dx =\lim_{a\to\infty} \frac{1}{x\ln^2 x}\, dx = \lim_{a\to\infty} \frac{-1}{\ln x}\biggr\rvert_{3}^{a} =\frac{1}{\ln 3}-\underbrace{\lim_{a\to\infty} \frac{1}{\ln a}}_{0} = \boxed{\frac{1}{\ln 3}}$$
+    
+    \item What is the $\int_{0}^{\infty} \frac{x}{\big(1+x^2\big)^2}\, dx$?
+    $$\int_{0}^{\infty} \frac{x}{\big(1+x^2\big)^2}\, dx = \lim_{a\to\infty} \int_{0}^{a}\frac{x}{\big(1+x^2\big)^2}\, dx = \lim_{a\to\infty} \frac{-1}{2(1+x^2)}\biggr\rvert_{0}^{a} = \frac{1}{2}-\underbrace{\lim_{a\to\infty}\frac{1}{2(1+a^2)}}_{0} = \boxed{\frac{1}{2}}$$
+    \item If $g$ is a twice-differentiable function, where $g(1) = 0.5$ and $\lim_{x\to\infty}g(x)=4$, then $\int_{1}^{\infty} g'(x)$ is
+    $$\int_{1}^{\infty} g'(x) = \lim_{x\to a} g(x)\biggr\rvert_{0}^{a} = \lim_{x\to a} g(a)-g(1)= 4-0.5=\boxed{3.5}$$
+
+\end{enumerate}
+\section*{5.03}
+\begin{enumerate}
+\item 
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l||l|l|l|l|l|}
+\hline
+$n$ & 100  & 200  & 300  & 400  & 500  \\ \hline
+$\sum_{k=1}^{n} \biggr(\frac{1}{x_k}\biggr) \cdot \frac{1}{n}$ & 5.19 & 5.88 & 6.28 & 6.57 & 6.79 \\ \hline
+\end{tabular}
+\end{table}
+The table above shows several Riemann sum approximations to $\int_{0}^{1} \frac{1}{x}\, dx$ using right-hand endpoints of $n$ subintervals of equal length of the interval $[0,1]$. Which of the following statements best describes the limit of the Riemann sums as $n$ approaches infinity?
+$$\sum_{k=1}^{n} \biggr(\frac{1}{x_k}\biggr) \cdot \frac{1}{n} = \sum_{k=1}^{n} \biggr(\frac{1}{x_k}\biggr) \biggr(\frac{k+1}{n}-\frac{k}{n}\biggr)$$
+
+\begin{enumerate}
+    \item $\lim_{a\to\infty} \int_{a}^{1} \frac{1}{x} \, dx = \lim_{a\to\infty} \ln |x| \biggr\rvert_{b}^{1} = \infty $
+\end{enumerate}
+$$\boxed{\text{The limit of the Riemann sums does not exist because} \int_{0}^{1} \frac{1}{x} \, dx \text{ does not exist.}}$$
+\item What is the $\int_{0}^{3} \frac{dx}{(1-x)^2}$
+\begin{enumerate}
+    \item Let $u=1-x \Longrightarrow du = -dx$
+\end{enumerate}
+$$\int_{0}^{3} \frac{dx}{(1-x)^2} = \int^{1}_{-2} \frac{1}{u^2}\, du = \lim_{b\to 0} \biggr[ \int_{-2}^{b} \frac{1}{u^2} \, du + \int_{b}^{1} \frac{1}{u^2} \, du \biggr]$$
+$$\lim_{b\to 0} \Biggr[ \frac{-1}{u} \biggr\rvert_{-2}^{b} + \frac{-1}{u}\bigg\rvert_{0}^{1}\Biggr] = \lim_{b\to 0^-} \bigg(\underbrace{\frac{-1}{b}}_{\infty}-\frac{1}{2}\bigg) +  \lim_{b\to 0^+} \bigg(-1+\underbrace{\frac{1}{b}}_{\infty}\bigg) =\infty$$
+$$\boxed{\text{Divergent}}$$
+\item $\int_{1}^{\infty}\frac{1}{x^P}\,dx$ and $\int_{0}^{1}\frac{1}{x^P}\,dx$ both diverge when $\boxed{P = 1}$
+\begin{equation}
+    \int \frac{1}{x^P} \, dx = 
+    \left\{
+        \begin{array}{lr}
+            \frac{-1}{(P-1)x^{P-1}} &\text{if } P \neq 1\\
+           \ln|P|, & \text{if } P=0
+        \end{array}
+        \right.
+    \end{equation}
+\item Which of the following statements about the integral $\int_{0}^{\pi} \sec^2 x \, dx$ is true?
+
+$$\int_{0}^{\pi} \sec^2 x \, dx = \lim_{b\to \frac{\pi}{2}^-} \tan x \bigg\rvert_{0}^{b} + \lim_{a\to \frac{\pi}{2}^+} \tan x \bigg\rvert_{a}^{\pi} = \lim_{b\to \frac{\pi}{2}^-} \tan b - \lim_{a\to \frac{\pi}{2}^+} \tan a = \infty$$
+
+$$\boxed{\text{The integral diverges because } \lim_{x\to \frac{\pi}{2}^-} \tan x \text{ does not exist.}}$$
+\item An antiderivative of $\frac{e^x}{e^x-1}$ is $\ln|e^x-1|$. Which of the following statements about the integral $\int_{-2}^{2} \frac{e^x}{e^x-1} \, dx$ is true?
+
+$$\int_{-2}^{2} \frac{e^x}{e^x-1} \, dx = \lim_{b\to 0^-} \ln|e^x-1|\biggr\rvert_{-2}^{b} + \lim_{a\to 0^+} \ln|e^x-1|\biggr\rvert_{a}^{2}$$
+$$\boxed{\text{The integral diverges because } \lim_{x\to 0^-} \ln|e^x-1| \text{ does not exist.}}$$
+\item What is the $\int_{0}^{4} \frac{1}{\sqrt{x}\big(1+\sqrt{x}\big)}\, dx$?
+\begin{enumerate}
+    \item Let $u=1+\sqrt{x} \Longrightarrow du= \frac{1}{2\sqrt{x}}$
+\end{enumerate}
+$$\int_{0}^{4} \frac{1}{\sqrt{x}\big(1+\sqrt{x}\big)}\, dx=2\int_{1}^{3} \frac{1}{u}\,du=2\ln|u|\biggr\rvert_{1}^{3} =2\ln 3-2\ln 1 = \boxed{2\ln 3}$$
+
+
+\end{enumerate}
+\end{document}
