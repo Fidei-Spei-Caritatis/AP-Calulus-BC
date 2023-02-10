@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[paper=A4,margin=2cm]{geometry}
+
+\usepackage {mathtools, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+
+\setlength{\droptitle}{-6em}
+\everymath{\displaystyle}
+
+\title{Improper Integral Practice
+}
+\author{Aiden Rosenberg}
+\date{November 28, 2022 A.D}
+
+\begin{document}
+\maketitle
+    \section*{Question 1}
+\begin{enumerate}[label=\Alph*.]
+	\item \(\int \frac{dx}{x^2+1} = \arctan x + C \)
+	\item The \(\int_{0}^{\infty} \frac{dx}{1+x^2}\) is improper because of an indefinite integral i.e for \( x\in[0,\infty) \).
+		\item \(\int_{0}^{\infty} \frac{dx}{1+x^2}  =\underbrace{\int_{0}^{1} \frac{dx}{1+x^2}}_{\text{Definite Integral}} + \underbrace{\int_{1}^{\infty} \frac{dx}{1+x^2}}_{\text{Improper Integral}}\). Since \(\frac{1}{1+x^2} < \frac{1}{x^2}\) on $(1,\infty)$ and $\int_{1}^{\infty} \frac{dx}{x^2}$ converges. Therefore by the comparison test $\int_{1}^{\infty} \frac{dx}{1+x^2}$ converges. 
+		\item $\int_{0}^{\infty} \frac{dx}{1+x^2}  =\int_{0}^{1} \frac{dx}{1+x^2} + \int_{1}^{\infty} \frac{dx}{1+x^2} = \arctan x \biggr\rvert_{0}^{1} + \lim_{b \to \infty} \arctan x \biggr\rvert_{1}^{b} = \boxed{\frac{\pi}{2}}$
+		\end{enumerate}
+    \section*{Question 2}
+		\begin{enumerate}
+			\item $\int x^{-3/5} \, dx  = \frac{5x^{2/5}}{2} + C $
+			\item The $\int_{0}^{\infty} x^{-3/5} \, dx $ is improper because of an indefinite integral i.e for \( x\in(0,\infty) \). 
+			\item \(\int_{0}^{\infty} \frac{dx}{1+x^2}  =\underbrace{\int_{0}^{1} x^{-3/5} \, dx }_{\text{Converges}} + \underbrace{\int_{1}^{\infty} x^{-3/5} \, dx}_{\text{Diverges}}\). Since $\int_{1}^{\infty }\frac{1}{x^P} \, dx$ converges when $P > 1$ and diverges when $P \leq 1$, and $\frac{3}{5} < 1$ therefore the $\int_{1}^{\infty} \frac{dx}{x^{3/5}}$ diverges. 
+			\item $\int_{0}^{1} x^{-3/5} = \lim_{a\to 0} \frac{5x^{2/5}}{2} \biggr\rvert_{a}^{1} = \boxed{\frac{5}{2}}$
+		\end{enumerate}
+    \section*{Question 3}
+		\begin{enumerate}
+			\item  $\int x^{-1/3} \, dx  = \frac{3x^{2/3}}{2} + C $
+			\item The $\int_{-8}^{1} x^{-1/3} \, dx $ is improper because the $\lim_{x\to 0^+} x^{-1/3} = \infty$ and the$\lim_{x\to 0^-} x^{-1/3} = -\infty$  therefore there is a vertical asymptote at $x=0$.
+			\item \(\int_{-8}^{1} x^{-1/3} \, dx  =\underbrace{\int_{-8}^{0} x^{-1/3} \, dx }_{\text{Converges}} + \underbrace{\int_{0}^{1} x^{-1/3} \, dx}_{\text{Converges}}\). Since $\int_{0}^{1}\frac{1}{x^P} \, dx$ converges when $P < 1$ and diverges when $P \geq 1$, and $\frac{1}{3} < 1$ therefore the $\int_{0}^{1} \frac{dx}{x^{1/3}}$ and $\int_{-1}^{0} x^{-1/3} \, dx $ converges. 
+			\item $\int_{-8}^{1} x^{-1/3} \, dx = \lim_{a\to 0^-} \frac{3x^{2/3}}{2} \biggr\rvert_{-8}^{a} + \lim_{b\to 0^+} \frac{3x^{2/3}}{2} \biggr\rvert_{b}^{1} = \boxed{-\frac{9}{2}}$
+		\end{enumerate}
+    \section*{Question 4}
+		\begin{enumerate}
+			\item $\int \frac{e^{1/x}}{x^2} \, dx = -e^{1/x} + C$
+			\item The $\int_{0}^{\ln 2} \frac{e^{1/x}}{x^2} \, dx $ is improper because the $\lim_{x\to 0^+} \frac{e^{1/x}}{x^2} = \infty$  therefore there is a vertical asymptote at $x=0$.
+			\item The $\underbrace{\int_{0}^{\ln 2} \frac{e^{1/x}}{x^2} \, dx}_{\text{Converges}}$. Since \(\frac{e^{1/x}}{x^2} > \frac{1}{x^2}\) on $(0,\ln 2)$ and $\int_{0}^{\ln 2} \frac{dx}{x^2}$ diverges. Therefore by the comparison test $\int_{0}^{\ln 2} \frac{e^{1/x}}{x^2}$ diverges.  
+		\end{enumerate}
+    \section*{Question 5}
+		\begin{enumerate}
+			\item $\int \frac{dx}{x^2+5x+6} =\int \frac{dx}{(x+2)(x+3)} =\ln\bigg|\frac{x+2}{x+3}\bigg| + C$
+			\item The $\int_{-1}^{\infty} \frac{dx}{x^2+5x+6}$ is improper because of an indefinite integral i.e for $x \in[-1, \infty)$.
+				\item The $\int_{-1}^{\infty}\underbrace{\int_{-1}^{1} \frac{dx}{x^2+5x+6}}_{\text{Definite integral}} + \underbrace{\int_{1}^{0} \frac{dx}{x^2+5x+6}}_{\text{Improper integral}}$. Since $\int_{-1}^{1} \frac{dx}{x^2+5x+6}$ converges and $\frac{1}{x^2+5x+6}<\frac{1}{x^2}$ for $x\in(1,\infty)$ and $\int_{1}^{\infty} \frac{dx}{x^2}$ converges, therefore by the comparison test $\int_{1}^{\infty} \frac{dx}{x^2+5x+6}$ converges.
+				\item $\int_{-1}^{\infty} \frac{dx}{x^2+5x+6} = \lim_{b\to\infty} \ln\bigg|\frac{x+2}{x+3}\bigg|\biggr\rvert_{-1}^{b} = \lim_{b\to\infty}\underbrace{\ln\bigg|\frac{b+2}{b+3}\bigg|}_{\ln (1)} - \ln \frac{1}{2}= \ln 2$
+				\end{enumerate}
+    \section*{Question 6}
+				\begin{enumerate}
+					\item $\int \tan x \, dx =\ln|\sec x| + C$
+					\item The $\int_{0}^{\frac{\pi}{2}} \tan x \, dx$ is improper because the $\lim_{x\to\frac{\pi}{2}^-} \tan x = \infty$, therefore there is a vertical asymptote at $x = \frac{\pi}{2}$.
+				\item $\underbrace{\int_{0}^{\frac{\pi}{2}} \tan x \, dx}_{\text{Diverges}}$. Since $\lim_{x\to\frac{\pi}{2}} \tan x = \frac{1}{\frac{\pi}{2}-x}$ and since the $\int_{0}^{\frac{\pi}{2}} \frac{1}{\frac{\pi}{2}-x}$ diverges then  $\int_{0}^{\frac{\pi}{2}} \tan x \, dx$ diverges.  
+                    \item $\int_{0}^{\frac{\pi}{2}} \tan x \, dx = \lim_{b\to \frac{\pi}{2}} \ln|\sec x| \biggr\rvert_{0}^{b} = \lim_{b\to \frac{\pi}{2}} \ln|\sec b| - \ln(1) = \infty $
+				\end{enumerate}
+    \section*{Question 7}
+    \begin{enumerate}
+        \item $\int \frac{dx}{\sqrt{x-1}} = 2\sqrt{x-1} +C$
+        \item The $\int_{5}^{\infty} \frac{dx}{\sqrt{x-1}}$ is improper because of an indefinite integral i.e for \( x\in[5,\infty) \).
+        \item $\underbrace{\int_{5}^{\infty} \frac{dx}{\sqrt{x-1}}}_{\text{Diverges}}$. Since $\frac{1}{\sqrt{x-1}} > \frac{1}{x^{1/2}}$ on $(5,\infty)$ and $\int_{5}^{\infty} x^{-1/2} \, dx$ diverges, therefore by the comparison test $\int_{5}^{\infty} \frac{dx}{\sqrt{x-1}}$ diverges.
+        \item $\int_{5}^{\infty} \frac{dx}{\sqrt{x-1}} = \lim_{b\to\infty} 2\sqrt{x-1}\biggr\rvert_{5}^{b} = \infty$
+    \end{enumerate}
+    \section*{Question 8}
+    \begin{enumerate}
+        \item $\int \frac{dx}{\sqrt{4-x}}=-2\sqrt{4-x}+C$
+        \item The $\int_{0}^{4} \frac{dx}{\sqrt{4-x}}$ is improper because the $\lim_{x\to4^-} \frac{dx}{\sqrt{4-x}} = \infty$, therefore there is a vertical asymptote at $x=4$.
+        \item $\int_{0}^{4} \frac{dx}{\sqrt{4-x}}= \int_{0}^{4} \frac{dx}{\sqrt{x}} = \underbrace{\int_{0}^{1} \frac{dx}{\sqrt{x}}}_{\text{Converges}} + \underbrace{\int_{1}^{4} \frac{dx}{\sqrt{x}}}_{\text{Definite integral}}$. Since $\int_{0}^{1}\frac{1}{x^P} \, dx$ converges when $P < 1$ and diverges when $P \geq 1$, and $\frac{1}{2} < 1$ therefore the $\int_{0}^{1} \frac{dx}{\sqrt{x}}$ diverges. 
+        \item $\int_{0}^{4} \frac{dx}{\sqrt{4-x}}=\lim_{b\to\infty}-2\sqrt{x-1}\biggr\rvert_{0}^{4} = \infty$
+    \end{enumerate}
+\section*{Question 9}
+\begin{enumerate}
+    \item $\int \frac{dx}{x^2+5x+6} =\int \frac{dx}{(x+2)(x+3)} =\ln\bigg|\frac{x+2}{x+3}\bigg| + C$
+    \item The $\int_{-5}^{0} \frac{dx}{x^2+5x+6}$ is improper because the $\underbrace{\lim_{x\to-2^-} \frac{1}{x^2+5x+6}}_{-\infty}  \neq \underbrace{\lim_{x\to-2^+} \frac{1}{x^2+5x+6}}_{\infty}$ and $\underbrace{\lim_{x\to-3^-} \frac{1}{x^2+5x+6}}_{\infty}  \neq \underbrace{\lim_{x\to-3^+} \frac{1}{x^2+5x+6}}_{-\infty}$, therefore there is a vertical asymptotes at $x=-2$ and $x=-3$.
+    \item $\int_{-5}^{0} \frac{dx}{x^2+5x+6} = \underbrace{\int_{-5}^{-3} \frac{dx}{x^2+5x+6}}_{\text{Diverges}} + \underbrace{\int_{-3}^{2} \frac{dx}{x^2+5x+6}}_{\text{Diverges}} + \underbrace{\int_{-2}^{0}\frac{dx}{x^2+5x+6}}_{\text{Diverges}}$. Since $\int_{-2}^{0}\frac{1}{x^2+5x+6} =\lim_{a\to-2} \ln\bigg|\frac{x+2}{x+3}\bigg| \biggr\rvert_{a}^{0}= 2\ln 3 - \underbrace{\ln (0)}_{\infty}  = \infty$ then $\int_{-5}^{0} \frac{dx}{x^2+5x+6}$ diverges.
+\end{enumerate}
+\section*{Question 10}
+\begin{enumerate}
+     \item $\int \frac{dx}{\sqrt{x-1}} = 2\sqrt{x-1} +C$
+     \item The $\int_{1}^{5} \frac{dx}{\sqrt{x-1}}$ is improper because $\lim_{x\to 1^+} \frac{1}{\sqrt{x-1}} = \infty$ and therefore there is a vertical asymptote at $x=1$.
+     \item $\int_{1}^{5} \frac{dx}{\sqrt{x}} = \underbrace{\int_{0}^{1} \frac{dx}{\sqrt{x}}}_{\text{Converges}} + \underbrace{\int_{1}^{5} \frac{dx}{\sqrt{x}}}_{\text{Definite integral}}$. Since $\int_{0}^{1} \frac{1}{x^P} \, dx$ converges when $P<1$ and diverges when $P\geq 1$ and $\frac{1}{2}<1$, therefore the $\int_{0}^{1} \frac{dx}{\sqrt{x}}$ converges.
+     \item $\int_{1}^{5} \frac{dx}{\sqrt{x}} = \lim_{a\to 0} 2\sqrt{x-1}\biggr\rvert_{a}^{1} = 4$
+     
+\end{enumerate}
+\end{document}

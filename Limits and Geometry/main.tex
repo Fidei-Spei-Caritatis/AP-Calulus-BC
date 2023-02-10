@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage[paper=legalpaper,margin=2cm]{geometry}
+
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\everymath{\displaystyle}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© MMXXII All Rights Reserved, Aiden Rosenberg}}
+
+\title{Limits and Geometry}
+\author{Aiden Rosenberg}
+\date{December MMXXII A.D}
+\newtheorem{prop}{Proposition}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Problem}
+Let $P(a,a^2)$ be a point on the parabola $y=x^2$, $a>0$. Let $O$ denote the origin and $(0,b)$ the $y$-intercept of the perpendicular bisector of the line segment $\overline{OP}$. Find the $\lim_{P\to O} b$.
+\section{Conjecture}
+\begin{prop}
+The $\lim_{P\to O} b=k$ such that $k\in\mathbb{R^{+}}$.
+\end{prop}
+\section{Graph}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    axis line style={->},
+    xlabel = \(x\),
+    ylabel = {\(f(x)\)},
+    ticks=none, 
+    xmin=-1,ymin=-1,ymax=2,xmax=2,
+    every axis plot/.append style={thick},
+   legend pos=outer north east
+    ]
+\addplot [
+    domain=-5:5, 
+      range=-1:1,
+      smooth,
+      samples=50, 
+    color=violet,
+]
+{x^2};
+\addlegendentry{\(f(x)=x^2\)}
+%Here the blue parabola is defined
+\addplot[
+    domain=-5:5, 
+    range=0:1
+    samples=50, 
+    color=purple
+]
+{(-1)*(x-0.5)+0.5};
+\addlegendentry{Perpendicular Bisector}
+
+\addplot [
+    domain=0:1, 
+    yrange=0:1
+    xmin = 0, xmax=1
+    samples=50, 
+    color=teal,
+]
+{x};
+\addlegendentry{Secant Line}
+\addplot [color=magenta,mark=*]
+    coordinates {
+    (1,1)
+    };
+\addlegendentry{$P$}
+\addplot [color=cyan,mark=*]
+    coordinates {
+    (0,1)
+    };
+\addlegendentry{$(0,b)$}
+\addplot [fill=white,mark=*]
+    coordinates {
+    (0,0)
+    };
+\addlegendentry{$O$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\section{Analysis}
+
+\subsection{Numerical Analysis}
+\begin{table}[h]
+\centering
+\begin{tabular}{l||l|l|l|l|l}
+$a$ & 0.1 & 0.01 & 0.001 & 0.0001 & 0.00001 \\ \hline
+$b$ &  0.505   &  0.50005   &    0.5000005   & 0.500000005 &0.50000000005     \\
+\end{tabular}
+\end{table}
+The table above represents simulated values for $b$ using graphical analysis via the Desmos engine. Link to the interactive graph: \url{https://www.desmos.com/calculator/kwepdntlyx} 
+\subsection{Algebraic Analysis}
+Let $m$ denote the slope of the secant line of the point $(0,0)$ and $(0,a)$ $\therefore m=\frac{f(a)}{a} = \frac{a^2}{a}=a$. The equation for the perpendicular bisector of the line can be written as $y_{\bot}=\frac{-1}{a}(x-x_m)+y_m$ where $(x_m, y_m)$ is the midpoint of the secant line. The point $(x_m, y_m)$ can be expressed as $\biggr(\frac{a}{2}, \frac{f(a)}{2}\biggr) \Longrightarrow y_{\bot}=\frac{-1}{a}\biggr(x-\frac{a}{2}\biggr)+\frac{f(a)}{2} \xRightarrow[]{\text{Simplifying}} y_{\bot}=\frac{-x}{a}+ \underbrace{\frac{1}{2}+ \frac{a^2}{2}}_{\text{Real Number}}$. When $x=0 \Longrightarrow y=\underbrace{\frac{1+a^2}{2}}_{y\text{-intercept}}=b$. The $\lim_{P\to O} b = \lim_{a\to 0} \frac{1+a^2}{2} =\tcbhighmath{\frac{1}{2}}$. 
+
+\begin{FlushRight}
+\textbf{Q.E.D}.
+\end{FlushRight}
+
+
+
+\end{document}

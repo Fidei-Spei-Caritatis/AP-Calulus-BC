@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[paper=letterpaper,margin=2cm]{geometry}
+
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+
+\setlength{\droptitle}{-6em}
+\everymath{\displaystyle}
+
+\title{WORKSHEET ON L’HOPITAL’S RULE AND IMPROPER INTEGRALS}
+\author{Aiden Rosenberg}
+\date{November 28, 2022 A.D}
+
+\begin{document}
+\newcommand*\Heq{\overset{\mathrm{H}}{=}}
+\maketitle
+\begin{enumerate}
+    \item $\lim_{x \to 0} \frac{1-\cos x}{x+x^2} \Heq \lim_{x\to 0} \frac{\sin x}{1+2x} = \boxed{0}$
+    \item $\lim_{x \to 0} \frac{\sqrt{1+x}-1 -\frac{x}{2}}{x^2} \Heq \lim_{x \to 0} \frac{\frac{1}{2}(1+x)^{-1/2}-\frac{1}{2}}{2x} \Heq \lim_{x \to 0} \frac{-\frac{1}{4}(1+x)^{-3/2}}{2}  = \boxed {-\frac{1}{8}}$
+    \item $\lim_{x\to 1} \biggr(\frac{1}{\ln x} - \frac{1}{x-1}\biggr) = \lim_{x\to 1} \frac{x-1-\ln x}{x\ln x - \ln x} \Heq \lim_{x\to 1} \frac{1-x^{-1}}{\ln x +1 - x^{-1}} \Heq \lim_{x\to 1}\frac{x^{-2}}{x^{-1}+{x^-2}}= \lim_{x\to 1} \frac{1}{x+1} = \boxed{\frac{1}{2}}$
+    \item $\lim_{\theta \to \frac{\pi}{2}} \frac{1-\sin \theta}{1+\cos 2\theta} \Heq \lim_{\theta \to \frac{\pi}{2}} \frac{-\cos \theta}{-2\sin 2\theta} \Heq \lim_{\theta \to \frac{\pi}{2}} \frac{\sin \theta}{-4\cos 2 \theta} = \boxed{\frac{1}{4}}$
+    \item $\lim_{x\to 0 } \frac{\cos x -1}{e^x-x-1} \Heq \lim_{x\to 0 } \frac{-\sin x}{e^x-1} \Heq \lim_{x\to 0 } \frac{-\cos x}{e^x}= \boxed{-1}$
+    \item $a = \lim_{x\to 0 } (e^x+1)^{1/x} \Longrightarrow \ln a = \lim_{x\to 0 } \frac{\ln(e^x+1)}{x} \Heq \lim_{x\to 0 } \frac{e^x+1}{e^x+x} = 2 \Longrightarrow a= \boxed{e^2}$
+    \item $\lim_{x\to \frac{\pi}{2}^-} \big(\cos x\big)^ {\underbrace{\cos x}_{0}}
+    = \boxed{1}$
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,222 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage{fancyhdr}
+\usepackage{caption, booktabs}
+\usepackage{makecell}
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{5pt}
+\setlength\cellspacebottomlimit{5pt}
+
+
+
+
+\usepackage{tabularx}
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+\setlength{\droptitle}{-6mm}
+
+\title{Euler's Method}
+\author{Aiden Rosenberg}
+\date{October 2022 A.D}
+
+\begin{document}
+\maketitle
+\section*{Problem 1}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Given the differential equation $\frac{dy}{dx}=x+2$ and $y(0)=3$. Find an approximation for $y(1)$ by using Euler's Method with two equal steps. 
+ \begin{center}
+            
+\begin{table}[h]
+\caption{$\Delta x = 0.5$}
+\centering \label{table_example}
+\begin{tabular}{l|l|l|l}
+$x$ & $y$ & $\frac{dy}{dx}$ & $\Delta y $ \\ \hline
+0 & 3 & 3 & 1.5 \\
+0.5 & 4.5 & 5 & 2.25 \\
+1 & 6.25 & 7.25 & 3.625
+\end{tabular}
+\end{table}
+\end{center}
+$$y(1) \approx 6.25$$
+
+\item 
+$$\int \frac{dy}{dx} \, dx =\int x+2 \, dx$$
+$$y=\frac{x^2}{2}+2x+C \bigg\rvert_{(0,3)} \Longrightarrow C=3$$
+$$ y=\frac{x^2}{2}+2x+3 \bigg\rvert_{x=1} = 5.5 $$
+
+\item 
+The difference between the estimate and the exact value is $\frac{1}{4}$; to increase accuracy smaller steps can be used.
+\end{enumerate}
+
+\item Suppose a continuous function $f$ and its derivative $f'$ have the values given in the following table. Given that $f(2)=5$, use Euler's Method with two steps of size $\Delta x =0.5$ to approximate the value of $f(3)$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l|l|l}
+$x$ & 2.0 & 2.5 & 3.0 \\ \hline
+$f'(x)$ & 0.4 & 0.6 & 0.8 \\ \hline
+$f(x)$ & 5 &  & 
+\end{tabular}
+\end{table}
+
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 0.5$}
+\centering \label{table_example}
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+2 & 5 & 0.4 & 0.2 \\
+2.5 & 5.2 & 0.6 & 0.3 \\
+3 & 5.5 &  & 
+\end{tabular}
+\end{table}
+
+
+\item $$f(3)\approx 5.5$$
+\end{enumerate}
+
+
+\item  Given the differential equation $\frac{dy}{dx}=\frac{1}{x+2}$ and $y(0)=1$. Find an approximation for $y(1)$ by using Euler's Method with two steps $\Delta x =0.5$. 
+\begin{enumerate}
+    \item 
+\begin{table}[h]
+\caption{$\Delta x = 0.5$}
+\centering \label{table_example}
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+0 & 1 & 0.5 & 0.25 \\
+0.5 & 1.25 & 0.4 & 0.2 \\
+1 & 1.45 &  & 
+\end{tabular}
+\end{table}
+\item $$y(1)\approx 1.45$$
+\end{enumerate}
+\item  Given the differential equation $\frac{dy}{dx}=x+y$ and $y(1)=3$. Find an approximation for $y(2)$ by using Euler's Method with two steps $\Delta x =0.5$. 
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 0.5$}
+\centering \label{table_example}
+
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+1 & 3 & 4 & 2 \\
+1.5 & 5 & 6.5 & 3.25 \\
+2 & 8.25 &  & 
+\end{tabular}
+
+\end{table}
+\item $$y(2)\approx 8.25$$
+\end{enumerate}
+\newpage
+\item The curve passing through (2,0) satisfies the differential equation $\frac{dy}{dx}=4x+y$.
+Find an approximation to $y(3)$ using Euler's Method with two equal steps. 
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 0.5$}
+\centering \label{table_example}
+
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+2 & 0 & 8 & 4 \\
+2.5 & 4 & 14 & 7 \\
+3 & 11 &  & 
+\end{tabular}
+
+\end{table}
+\item $$y(3)\approx 11$$
+\end{enumerate}
+
+\item Suppose a continuous function $f$ and its derivative $f'$ have the values given in the following table. Use Euler's Method with two equal steps to approximate the value of $f(4.4)$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l|l|l}
+$x$ & 4 & 4.2 & 4.4 \\ \hline  
+$f'(x)$ & -0.5 & -0.3 & -0.1  \\ \hline  
+$f(x)$ & 2 & &
+\end{tabular}
+\end{table}
+\newpage
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 0.2$}
+\centering \label{table_example}
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+4 & 2 & -0.5 & -0.1 \\
+4.2 & 1.8 & -0.3 & -0.06 \\
+4.4 & 1.84 & -0.1 & 
+\end{tabular}
+
+
+\end{table}
+\item $$y(4.4)\approx 1.84$$
+\end{enumerate}
+\item The table gives selected values for the derivative of a function $f$ on the interval $-2\leq x \leq 2$. If $f(-2)=3$ and Euler's Method with a step-size of 1.5 is used to approximate $f(1)$, what is the resulting approximation?
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+$x$  & $f'(x)$ \\ \hline
+-2   & -0.8    \\ \hline
+-1.5 & -0.5    \\ \hline
+-1   & -0.2    \\ \hline
+-0.5 & 0.4     \\ \hline
+0    & 0.9     \\ \hline
+0.5  & 1.6     \\ \hline
+1    & 2.2     \\ \hline
+1.5  & 3       \\ \hline
+2    & 3.7     \\ \hline
+\end{tabular}
+\end{table}
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 1.5$}
+\centering \label{table_example}
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+-2 & 3 & -0.8 & -1.2 \\
+-0.5 & 1.8 & 0.4 & 0.6 \\
+1 & 2.4 & 2.2 & 
+\end{tabular}
+\end{table}
+\item $$f(1)\approx 2.4$$
+\end{enumerate}
+
+\item Let $y=f(x)$ be the particular solution to the differential equation $\frac{dy}{dx}=x+2y$ with the initial condition $f(0)=1$. Use Euler's Method, starting at $x=0$ with two steps of equal size to approximate $f(-0.6)$.
+
+\begin{enumerate}
+    \item 
+
+\begin{table}[h]
+\caption{$\Delta x = 1.5$}
+\centering \label{table_example}
+\begin{tabular}{l|lll}
+$x$ & \multicolumn{1}{l|}{$y$} & \multicolumn{1}{l|}{$\frac{dy}{dx}$} & $\Delta y$ \\ \hline
+0 & 1 & 2 & -0.6 \\
+-0.3 & 0.4 & 0.5 & -0.15 \\
+-0.6 & 0.25 &  & 
+\end{tabular}
+\end{table}
+\item $$f(-0.6)\approx 0.25$$
+\end{enumerate}
+\end{enumerate}
+\end{document} 
