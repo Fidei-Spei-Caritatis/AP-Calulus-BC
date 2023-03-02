@@ -8,13 +8,20 @@
 \usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{pgfplots}
+\usepackage[shortlabels]{enumitem}
 \usepackage{tikz}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
 \usepgfplotslibrary{polar}
 
 \pgfplotsset{compat=newest}
-\pgfplotsset{every axis/.append style={
-                     tick label style={font=\footnotesize},
-                 }}
+\pgfplotsset{every axis/.append style={tick label style={font=\footnotesize},}}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
 
 
 \pagestyle{fancy}
@@ -54,7 +61,7 @@
 	      	\item $\frac{dr}{d\theta} = 2$
 	      \end{enumerate}
 	      $$\frac{dy}{dx} = \frac{2 \sin \theta + (2\theta) \cdot \cos\theta}{2\cos\theta -(2\theta)\cdot \sin\theta}\biggr\rvert_{\theta=\frac{\pi}{2}} = \boxed{\frac{-2}{\pi}}$$
-	      	
+	      	      	
 	\item What is the slope of the line tangent to the polar curve $r = 2 \cos \theta -1$ at the point where $\theta = \pi$?
 	      \begin{enumerate}
 	      	\item $\frac{dr}{d\theta} = -2\sin\theta$
@@ -99,71 +106,71 @@
 	      				xticklabels={0,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}2$, $\frac{7\pi}{6}$ }
 	      			]
 	      			\addplot[domain=0:2*pi,samples=100,color=red,data cs=polarrad] { 1 + 2*sin(deg(x)) };
-					  \addlegendentry{$r=1+2\sin \theta$}
+	      			\addlegendentry{$r=1+2\sin \theta$}
 	      		\end{polaraxis}
-	      			   
+	      			      			   
 	      	\end{tikzpicture}
 	      \end{figure}
-	      
+	      	      
 	      \begin{enumerate}
 	      	\item $0 =1+2\sin \theta$ when $\theta = \frac{7\pi}{6}$ and $\theta = \frac{11\pi}{6}$
 	      \end{enumerate}
 	      $$\boxed{A=\frac{1}{2}\int_{\frac{7\pi}{6}}^{\frac{11\pi}{6}}\big(1+2\sin \theta\big)^2 \, d\theta}$$
-		  \pagebreak
+	      \pagebreak
 	\item Which of the following gives the total area enclosed by the graph of the polar curve $r = \theta \sin 2\theta$ for $0\leq\theta\leq 2\pi$?
-
-	\begin{figure}[!h]
-		\centering
-		\begin{tikzpicture}[scale=0.50]
-			\begin{polaraxis}[
-					xtick distance = deg(pi/4),
-					xtick = {0,0,deg((pi)/4),deg((pi)/2),deg((3*pi)/4),deg(pi),deg((5*pi)/4),deg((3*pi)/2), deg((7 * pi)/4)},
-					xticklabels={0,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}2$, $\frac{7\pi}{6}$ }
-				]
-				\addplot[domain=0:2*pi,samples=100,color=red,data cs=polarrad] { x*sin(2* deg(x)) };
-				\addlegendentry{$r=\theta \sin 2\theta$}
-			\end{polaraxis}
-		\end{tikzpicture}
-	\end{figure}
-	$$A = \boxed{\frac{1}{2} \int_{0}^{2\pi} |\theta\sin2\theta|^2 \, d\theta}$$
+	      
+	      \begin{figure}[!h]
+	      	\centering
+	      	\begin{tikzpicture}[scale=0.50]
+	      		\begin{polaraxis}[
+	      				xtick distance = deg(pi/4),
+	      				xtick = {0,0,deg((pi)/4),deg((pi)/2),deg((3*pi)/4),deg(pi),deg((5*pi)/4),deg((3*pi)/2), deg((7 * pi)/4)},
+	      				xticklabels={0,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}2$, $\frac{7\pi}{6}$ }
+	      			]
+	      			\addplot[domain=0:2*pi,samples=100,color=red,data cs=polarrad] { x*sin(2* deg(x)) };
+	      			\addlegendentry{$r=\theta \sin 2\theta$}
+	      		\end{polaraxis}
+	      	\end{tikzpicture}
+	      \end{figure}
+	      $$A = \boxed{\frac{1}{2} \int_{0}^{2\pi} |\theta\sin2\theta|^2 \, d\theta}$$
 	\item Which of the following integrals gives the area of the region that is bounded by the graphs of the polar equations $\theta=0$, $\theta = \frac{\pi}{4}$, and, $r=\frac{2}{\cos \theta+\sin\theta}$? 
-
-	\begin{figure}[!h]
-		\centering
-		\begin{tikzpicture}[scale=0.50]
-			\begin{polaraxis}[
-					ymax= 2,
-					xtick distance = deg(pi/4),
-					xtick = {0,0,deg((pi)/4),deg((pi)/2),deg((3*pi)/4),deg(pi),deg((5*pi)/4),deg((3*pi)/2), deg((7 * pi)/4)},
-					xticklabels={0,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}2$, $\frac{7\pi}{6}$ }
-				]
-				\addplot[domain=0:2*pi,samples=100,color=red,data cs=polarrad] { 2*(sin(deg(x)) + cos(deg(x)))^(-1)};  
-				\addlegendentry{$r=\frac{2}{\cos \theta+\sin\theta}$}
-
-			\end{polaraxis}
-				   
-		\end{tikzpicture}
-	\end{figure}
-	$$A= \boxed{\int_{0}^{\frac{\pi}{4}} \frac{2}{\big(\cos \theta +\sin\theta\big)^2} \, d\theta}$$
+	      
+	      \begin{figure}[!h]
+	      	\centering
+	      	\begin{tikzpicture}[scale=0.50]
+	      		\begin{polaraxis}[
+	      				ymax= 2,
+	      				xtick distance = deg(pi/4),
+	      				xtick = {0,0,deg((pi)/4),deg((pi)/2),deg((3*pi)/4),deg(pi),deg((5*pi)/4),deg((3*pi)/2), deg((7 * pi)/4)},
+	      				xticklabels={0,0,$\frac{\pi}{4}$,$\frac{\pi}{2}$,$\frac{3\pi}{4}$,$\pi$,$\frac{5\pi}{4}$,$\frac{3\pi}2$, $\frac{7\pi}{6}$ }
+	      			]
+	      			\addplot[domain=0:2*pi,samples=100,color=red,data cs=polarrad] { 2*(sin(deg(x)) + cos(deg(x)))^(-1)};  
+	      			\addlegendentry{$r=\frac{2}{\cos \theta+\sin\theta}$}
+	      			
+	      		\end{polaraxis}
+	      						   
+	      	\end{tikzpicture}
+	      \end{figure}
+	      $$A= \boxed{\int_{0}^{\frac{\pi}{4}} \frac{2}{\big(\cos \theta +\sin\theta\big)^2} \, d\theta}$$
 \end{enumerate}
 \section*{7.03}
 \begin{enumerate}
 	\item What is the total area between the polar curves $r = 5 \sin(3\theta)$ and $r = 8 \sin(3\theta)$?
-	$$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(8\sin(3\theta))^2 - \big(5\sin(3\theta\big)^2\bigg)\, d\theta \approx \boxed{30.631}$$
+	      $$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(8\sin(3\theta))^2 - \big(5\sin(3\theta\big)^2\bigg)\, d\theta \approx \boxed{30.631}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width=2in]{7.032.png}
 	      \end{center}
 	      Let $R$ be the region in the first quadrant that is bounded above by the polar curve $r=4\cos \theta$ and below by the line $\theta=1$, as shown in the figure above. What is the area of $R$?
-	$$R = \frac{1}{2}\int_{1}^{\frac{\pi}{2}}\big(4\cos\theta\big)^2\, d\theta =-2(\sin(2)-\pi+2) \approx \boxed{0.465}$$
+	      $$R = \frac{1}{2}\int_{1}^{\frac{\pi}{2}}\big(4\cos\theta\big)^2\, d\theta =-2(\sin(2)-\pi+2) \approx \boxed{0.465}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width = 2in]{7.033.png}
 	      \end{center}
 	      The figure above shows the graphs of the polar curves $r=2\cos(3\theta)$and $r=2$. What is the sum of the areas of the shaded regions?
-	$$A=\underbrace{4\pi}_{\text{Area of circle}} - \underbrace{\frac{1}{2}\int_{0}^{\pi} (2\cos(3\theta))^2}_{\text{Area of rose}} = 3\pi \approx \boxed{9.425}$$
+	      $$A=\underbrace{4\pi}_{\text{Area of circle}} - \underbrace{\frac{1}{2}\int_{0}^{\pi} (2\cos(3\theta))^2}_{\text{Area of rose}} = 3\pi \approx \boxed{9.425}$$
 	\item What is the area of the region $R$ bounded by the graph of the polar curve $r=\sqrt{1+\frac{3\theta}{\pi}}$ and the $x$-axis for $0\leq\theta\leq\pi$?
-	$$R = \frac{1}{2} \int_{0}^{\pi} \bigg(1+\frac{3\theta}{\pi}\bigg) \, d\theta = \frac{1}{2} \bigg[\theta + \frac{3\theta^2}{2\pi}\bigg]_{0}^{\pi} = \boxed{\frac{5\pi}{4}}$$
+	      $$R = \frac{1}{2} \int_{0}^{\pi} \bigg(1+\frac{3\theta}{\pi}\bigg) \, d\theta = \frac{1}{2} \bigg[\theta + \frac{3\theta^2}{2\pi}\bigg]_{0}^{\pi} = \boxed{\frac{5\pi}{4}}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width = 2in]{7.035}
@@ -176,21 +183,137 @@
 	      	\end{tabular}
 	      \end{table}
 	      Let $R$ be the region bounded by the graph of the polar curve $r=f(\theta)$ and the lines $\theta=0$ and $\theta=1$, as shaded in the figure above. The table above gives values of the polar function $r=f(\theta)$ at selected values of $\theta$. What is the approximation for the area of region $R$ using a right Riemann sum with the four subintervals indicated by the data in the table?
-		  \begin{enumerate}
-			\item Note that Area $\approx \sum_{i=1}^{n} \frac{1}{2} r(\theta_i)^2 \, \Delta \theta$
-		  \end{enumerate}
-		  $$A = \frac{1}{2}\cdot \underbrace{\frac{1}{4}}_{\Delta\theta \cdot}\biggr(f\Big(\frac{1}{4}\Big)^2+f\Big(\frac{1}{2}\Big)^2 + f\Big(\frac{3}{4}\Big)^2\biggr) \approx \boxed{\frac{1}{8}(16+9+25+4)}$$
+	      \begin{enumerate}
+	      	\item Note that Area $\approx \sum_{i=1}^{n} \frac{1}{2} r(\theta_i)^2 \, \Delta \theta$
+	      \end{enumerate}
+	      $$A = \frac{1}{2}\cdot \underbrace{\frac{1}{4}}_{\Delta\theta \cdot}\biggr(f\Big(\frac{1}{4}\Big)^2+f\Big(\frac{1}{2}\Big)^2 + f\Big(\frac{3}{4}\Big)^2\biggr) \approx \boxed{\frac{1}{8}(16+9+25+4)}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width = 2in]{7.036}
 	      \end{center}
 	      What is the area of the region bounded by the graph of the polar curve $r= 1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)$, shown in the figure above?
-		  $$A=\frac{1}{2} \cdot\int_{0}^{2\pi} \bigg(1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)\bigg) \, d\theta = \frac{37\pi}{32} \approx \boxed{3.632}$$
+	      $$A=\frac{1}{2} \cdot\int_{0}^{2\pi} \bigg(1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)\bigg) \, d\theta = \frac{37\pi}{32} \approx \boxed{3.632}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width=2in]{7.037}
 	      \end{center}      
 	      The figure above shows the graphs of the polar curves $r=2\sin^2\theta$ and $r=4\sin^2\theta$ for $0\leq \theta\leq\pi$. Which of the following integrals gives the area of the region bounded between the two polar curves?
-		  $$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(4\sin^2\theta\big)^2 - \big(2\sin^2\theta\big)\bigg)\, d\theta  = \boxed{\int_{0}^{\pi} 6\sin^2\theta \, d\theta}$$
+	      $$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(4\sin^2\theta\big)^2 - \big(2\sin^2\theta\big)\bigg)\, d\theta  = \boxed{\int_{0}^{\pi} 6\sin^2\theta \, d\theta}$$
+\end{enumerate}
+\section*{Extra Polar Practice}
+\begin{enumerate}
+	\item Which of the following intgrals represents the area enclosed by the smaller loop of the graph of $r=1+2\sin\theta$?
+	      \begin{enumerate}
+	      	\item $r=0$ when $\theta = \frac{7\pi}{6}$ and $\theta = \frac{11\pi}{6}$
+	      \end{enumerate}
+	      $$\boxed{A = \frac{1}{2} \int_{\frac{7\pi}{6}}^{\frac{11\pi}{6}} \big(1+2\sin\theta\big)^2\, d\theta}$$
+	\item What is the area of the region enclosed by the lemniscate $r^2=18\cos(2\theta)$?
+	      $$A = 4\biggr[\frac{1}{2} \int_{0}^{\frac{\pi}{4}}18 \cos(2\theta)\, d\theta \biggr] = 2\int_{0}^{\frac{\pi}{4}}18 \cos(2\theta)\, d\theta$$
+	      \begin{enumerate}
+	      	\item Let $u=2\theta \Longrightarrow \frac{du}{2} = d\theta$
+	      \end{enumerate}
+	      $$A = 18\sin(2\theta)\biggr\rvert_{0}^{\frac{\pi}{4}} = \boxed{18}$$
+	      
+	\item The area of one loop of the graph of the polar equation $r=2\sin(3\theta)$ is given by which of the following expresions?
+	      \begin{enumerate}
+	      	\item $r=0$ when $\theta = \fra{\pi}{3}$ and $\theta = 0$
+	      \end{enumerate}
+	      $$A = \frac{1}{2} \int_{0}^{\frac{\pi}{3}} 4\sin^2(3\theta) \, d\theta = \boxed{3\int_{0}^{\frac{\pi}{3}} \sin^2(3\theta) \, d\theta}$$
+	\item The area of the region inside the polar curve $r=4\sin\theta$ and outside the polar curve $r=2$ is given by
+	      \begin{enumerate}
+	      	\item The curves intersect when $\theta = \frac{\pi}{6}$ and $\theta = \frac{5\pi}{6}$
+	      \end{enumerate}
+	      $$\boxed{A = \frac{1}{2} \int_{\frac{\pi}{6}}^{\frac{5\pi}{6}} \big(16\sin^2\theta -4 \big)\, d\theta}$$
+	\item Which of the following is equal to the area of the region inside the polar curve $r=2\cos\theta$ and outside the polar curve $r=\cos\theta$
+	      $$A=\frac{1}{2}\int_{0}^{\pi} \big(4\cos^2\theta - \cos^2\theta\big)\, d\theta = \frac{3}{2} \int_{0}^{\pi} \cos^2\theta \, d\theta = \boxed{3\int_{0}^{\frac{\pi}{2}}\cos^2\theta \, d\theta}$$
+	\item Which of the following represents the graph of the polar curve $r=2\sec\theta$?
+	      $$r=2\sec\theta \Longrightarrow r\cos\theta = 2 \Longrightarrow \boxed{x=2}$$
+	\item Which of the following represents the area of the region enclosed by the loop of the graph of the polar curve $r=4\cos(3\theta)$?
+	      $$\boxed{A = 8 \int_{\frac{-\pi}{6}}^{\frac{\pi}{6}} \cos^2(3\theta)\, \mathrm{d}\theta}$$
+	\item What is the area of the region enclosed by the polar curve $r=\sin(2\theta)$ for $0 \leq \theta\leq \frac{\pi}{2}$?
+	      $$A = \frac{1}{2}\int_{0}^{\frac{\pi}{2}} \sin^2(2\theta)\, \mathrm{d}\theta$$
+	      $$2A = \int_{0}^{\frac{\pi}{2}} \sin^2(2\theta)\, \mathrm{d}\theta$$
+	      \begin{enumerate}
+	      	\item $u = \sin (2\theta) \Longrightarrow du =2\cos(2\theta) \, d\theta$
+	      	\item $v = \frac{-1}{2}\cos(2\theta) \Leftrightarrow dv = \sin(2\theta)\, d\theta$
+	      	\item Note: $\cos^2 (\theta) = 1 - \sin^2(\theta)$
+	      \end{enumerate}
+	      $$2A = \frac{-1}{2} \cos(2\theta)\sin(2\theta) + \int \cos^2(2\theta) \, \mathrm{d}\theta$$
+	      $$2A = \frac{-1}{2} \cos(2\theta)\sin(2\theta) + \int \big(1-\sin^2(2\theta)\big) \, \mathrm{d}\theta$$
+	      $$2A = \frac{-1}{2} \cos(2\theta)\sin(2\theta) + \theta -2A$$
+	      $$A = \frac{1}{4}\bigg[\frac{-1}{2} \cos(2\theta)\sin(2\theta) + \theta\bigg]_{0}^{\frac{\pi}{2}}$$
+	      $$A = \boxed{\frac{\pi}{8}}$$
+\end{enumerate}
+
+\section*{FRQ 1}
+\begin{center}
+	\includegraphics[width = 3in]{FRQ1.png}
+\end{center}
+The curve above is drawn in the $xy$-plane and is discribed by the equation in polar coordinates $r=\theta +\sin(2\theta)$ for $0\leq\theta\leq \pi$, where $r$ is measured in meters and $\theta$ is measured in radians. The derivitive of $r$ with respect to $\theta$ is given by $\frac{dr}{d\theta} = 1+2\cos(2\theta)$
+\begin{enumerate}[]
+	\item[(a)] Find the area bounded by the curve and the $x$-axis.
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\begin{aligned}
+	      		A = \frac{1}{2}\int_{0}^{\pi} \big(\theta +\sin(2\theta)\big)^2 \, d\theta = \frac{\pi\big(2\pi^2-3\big)}{12}\approx 4.382 
+	      	\end{aligned}
+	      \end{empheq}
+	\item[(b)] Find the angle $\theta$ that corresponds to the point on the curve with the $x$-coordinate -2.
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\begin{aligned}
+	      		-2 = r\cos\theta = (\theta +\sin(2\theta))\cdot \cos\theta \\
+	      		\theta \approx 2.786                                       
+	      	\end{aligned}
+	      \end{empheq}
+	\item[(c)] For $\frac{\pi}{3} , \theta < \frac{2\pi}{3}$, $\frac{dr}{d\theta}$ is negitive. What does this say about $r$? What does this fact say about the curve?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{5in}{Since $\frac{dr}{d\theta} < 0$ for $\frac{\pi}{3} < \theta < \frac{2\pi}{3}$, $r$ is decresing on this interval. This means the curve is getting closer to the orgin.}
+	      \end{empheq}
+	\item[(d)] Find the value of $\theta$ in the interval $0 \leq \theta \leq \frac{\pi}{2}$ that cooresponds to the point on the curve in the first quadrant with the greatest distance from the orgin. Justify your answer.
+	      \begin{empheq}[box=\tcbhighmath]{multline*}
+	      	\parbox{3in}{The only value in $\big[0,\frac{\pi}{2}\big]$ where $\frac{dr}{d\theta}= 0$ is $\frac{\pi}{3}$}\\
+	      	\begin{array}{|c|c|}
+	      		\hline
+	      		\theta        & r     \\
+	      		\hline \hline
+	      		0             & 0     \\
+	      		\frac{\pi}{3} & 1.913 \\
+	      		\frac{\pi}{2} & 1.571 \\
+	      		\hline
+	      	\end{array}\\
+	      	\parbox{6in}{The greatest distance occurs at $\frac{\pi}{3}$.}	
+	      \end{empheq}
+\end{enumerate}
+\section*{FRQ 2}
+\begin{center}
+	\includegraphics[width = 3in]{FRQ2.png}
+\end{center}
+The graph of the polar curve $r = 1- 2\cos\theta$ for $0 \leq \theta \leq \pi$ is shown above. Let $S$ be the shaded region in the third quadrant bounded by the curve and the $x$-axis. 
+\begin{enumerate}
+	\item[(a)] Write an integral expression for the area of $S$.
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\begin{aligned}
+	      		r(0) = -1; r(\theta) = 0 \text{ when } \theta = \frac{\pi}{3}.                  \\
+	      		S = \frac{1}{2} \int_{0}^{\frac{\pi}{3}} \big(1-2\cos(\theta)\big)^2 \, d\theta 
+	      	\end{aligned}
+	      \end{empheq}
+	      
+	\item[(b)] Write expressions for $\frac{dx}{d\theta}$ and $\frac{dy}{d\theta}$ in terms of $\theta$.
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\begin{aligned}
+	      		x                  & = r\cos\theta \text{ and } y=r \sin \theta      \\
+	      		\frac{dr}{d\theta} & = 2\sin\theta                                   \\
+	      		\frac{dx}{d\theta} & = 4\sin\theta\cos\theta-\sin\theta              \\
+	      		\frac{dy}{d\theta} & = 2\sin^2\theta+(1-2\cos\theta)\cdot \cos\theta 
+	      	\end{aligned}
+	      \end{empheq}
+	      
+	\item[(c)] Write an equation in terms of $x$ and $y$ for the line tangent to the graph of the polar curve at the point where $\theta = \frac{\pi}{2}$. Show the computations that lead to your answer. 
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\begin{aligned}
+	      		\text{When $\theta = \frac{\pi}{2}$, we have $x=0$ and $y=1$}                                                                                \\
+	      		\frac{dy}{dx}\biggr\rvert_{\theta = \frac{\pi}{2}} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}\biggr\rvert_{\theta = \frac{\pi}{2}} = -2 \\
+	      		\text{The tangent line is given by $y=1-2x$.}                                                                                                
+	      	\end{aligned}
+	      \end{empheq}
 \end{enumerate}
 \end{document}
