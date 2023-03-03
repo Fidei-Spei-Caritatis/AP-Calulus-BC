@@ -55,7 +55,7 @@
 	\item A polar curve is given by the differentiable function $r=f(\theta)$ for $0\leq \theta \leq 2\pi$. If the line tangent to the polar curve at $\theta=\frac{\pi}{3}$ is horizontal, which of the following must be true?
 	      $$0=\frac{dy}{d\theta}\biggr\rvert_{\frac{\pi}{3}} = \boxed{\frac{\sqrt{3}}{2}f'\bigg(\frac{\pi}{3}\bigg)+\frac{1}{2}f\bigg(\frac{\pi}{3}\bigg)} $$
 	\item For a certain polar curve $r=f(\theta)$, it is known that $\frac{dx}{d\theta} = \cos \theta - \theta\sin\theta$ and $\frac{dy}{d\theta} = \sin \theta + \theta\cos \theta$. What is the value of $\frac{d^2y}{dx^2}$ at $\theta=4$?
-	      $$\frac{d^2y}{d\theta^2} = \frac{\theta^2+2}{(\cos\theta - \theta\sin\theta)^3}\biggr\rvert_{\theta = 4} \approx \boxed{1.34607}$$
+	      $$\frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\theta^2+2}{(\cos\theta - \theta\sin\theta)^3}\biggr\rvert_{\theta = 4} \approx \boxed{1.34607}$$
 	\item What is the slope of the line tangent to the polar curve $r=2\theta$ at the point $\theta=\frac{\pi}{2}$?
 	      \begin{enumerate}
 	      	\item $\frac{dr}{d\theta} = 2$
@@ -192,13 +192,13 @@
 	      	\includegraphics[width = 2in]{7.036}
 	      \end{center}
 	      What is the area of the region bounded by the graph of the polar curve $r= 1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)$, shown in the figure above?
-	      $$A=\frac{1}{2} \cdot\int_{0}^{2\pi} \bigg(1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)\bigg) \, d\theta = \frac{37\pi}{32} \approx \boxed{3.632}$$
+	      $$A=\frac{1}{2} \cdot\int_{0}^{2\pi} \bigg(1 + \frac{1}{2}\cos(6\theta) + \frac{1}{4} \sin(3\theta)\bigg)^2 \, d\theta = \frac{37\pi}{32} \approx \boxed{3.632}$$
 	\item 
 	      \begin{center}
 	      	\includegraphics[width=2in]{7.037}
 	      \end{center}      
 	      The figure above shows the graphs of the polar curves $r=2\sin^2\theta$ and $r=4\sin^2\theta$ for $0\leq \theta\leq\pi$. Which of the following integrals gives the area of the region bounded between the two polar curves?
-	      $$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(4\sin^2\theta\big)^2 - \big(2\sin^2\theta\big)\bigg)\, d\theta  = \boxed{\int_{0}^{\pi} 6\sin^2\theta \, d\theta}$$
+	      $$A = \frac{1}{2} \int_{0}^{\pi} \bigg(\big(4\sin^2\theta\big)^2 - \big(2\sin^2\theta\big)^2\bigg)\, d\theta  = \boxed{\int_{0}^{\pi} 6\sin^4\theta \, d\theta}$$
 \end{enumerate}
 \section*{Extra Polar Practice}
 \begin{enumerate}
@@ -261,10 +261,10 @@ The curve above is drawn in the $xy$-plane and is discribed by the equation in p
 	      \begin{empheq}[box=\tcbhighmath]{equation*}
 	      	\begin{aligned}
 	      		-2 = r\cos\theta = (\theta +\sin(2\theta))\cdot \cos\theta \\
-	      		\theta \approx 2.786                                       
+	      		\theta \approx 2.786                            
 	      	\end{aligned}
 	      \end{empheq}
-	\item[(c)] For $\frac{\pi}{3} , \theta < \frac{2\pi}{3}$, $\frac{dr}{d\theta}$ is negitive. What does this say about $r$? What does this fact say about the curve?
+	\item[(c)] For $\frac{\pi}{3} < \theta < \frac{2\pi}{3}$, $\frac{dr}{d\theta}$ is negitive. What does this say about $r$? What does this fact say about the curve?
 	      \begin{empheq}[box=\tcbhighmath]{equation*}
 	      	\parbox{5in}{Since $\frac{dr}{d\theta} < 0$ for $\frac{\pi}{3} < \theta < \frac{2\pi}{3}$, $r$ is decresing on this interval. This means the curve is getting closer to the orgin.}
 	      \end{empheq}
