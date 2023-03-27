@@ -1,0 +1,384 @@
+\documentclass[12pt]{article}
+\usepackage[paper=letterpaper,margin=2cm]{geometry}
+
+\usepackage{mathtools, amssymb, amsthm, amsmath}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+
+\setlength{\droptitle}{-6em}
+%\everymath{\displaystyle}
+
+\title{AP Classroom Problems Unit 8}
+\author{Aiden Rosenberg}
+\date{March 4, 2023 A.D}
+
+\begin{document}
+\maketitle
+\section*{8.01}
+\begin{enumerate}
+	\item If $a_k=(-1)^k$ for $k=0,1,2,\dots $, which of the following statements about the infinite series $\sum_{k=0}^{\infty} a_k$ is true?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{5in}{The series can be written as $1+(-1)+1+(-1)+1+\cdots$. The sequence of partial sums of the series is $1,0,1,0,\cdots$, and this sequence of alternating 1s and 0s does not converge. Therefore, \fbox{the series diverges.}}
+	\end{empheq}
+	
+
+	\item If $a_n=1$, for all positive integers $n$, what is the value of $S_n$, the $n$th partial sum of the infinite series $\sum_{n=1}^{\infty} a_n$? \\
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+			\parbox{5in}{Each term $a_n$ of the infinite sequence is equal to $1$. It follows that $S_n$, the $n$th partial sum of the series $\sum_{n=1}^{\infty} a_n$, is the sum of $n$ 1s. Therefore, $\boxed{S_n=n}$}.
+	\end{empheq}
+
+	\item The infinite series $\sum_{k=1}^{\infty}$ has $n$th partial sum $S_n = \frac{n}{3n+1}$ for $n\geq1$. What is the sum of the series $\sum_{k=1}^{\infty}a_k$?
+	$$\sum_{k=1}^{\infty}a_k = \lim_{n\to\infty} S_n = \boxed{\frac{1}{3}}$$
+\end{enumerate}
+\section*{8.02}
+\begin{enumerate}
+	\item Which of the following series converge to $2$?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \frac{2n}{n+3}$ \textit{Diverges}  
+	      	\item $\sum_{n=1}^{\infty} \frac{-8}{(-3)^n} \Longrightarrow S = \frac{8/3}{4/3} = 2$ 
+	      	\item $\sum_{n=0}^{\infty} \frac{1}{2^n} \Longrightarrow S = \frac{1}{1/2} = 2$
+	      \end{enumerate}
+		$$\boxed{\text{II and III only}}$$
+	\item If $f(x)=\sum_{k=1}^{\infty} \big(\sin^2 x \big)^k$, then $f(1)$ is
+	$$f(1)= \frac{\sin^2(1)}{1-\sin^2(1)} = \tan^2(1) \approx \boxed{2.426}$$
+	\item Let $x$ be a real number. Which of the following statements about the infinite series $\sum_{k=0}^{\infty}e^{kx}$ is true?
+	$$\boxed{\text{The sum of the series is } \frac{1}{1-e^x} \text{ if } x<0 \text{.}}$$
+	\item If $x$ and $y$ are positive real numbers, which of the following conditions guarantees that the infinite series $\sum_{n=0}^{\infty} \big(\frac{x}{y}\big)\big(\frac{x}{y^2}\big)^n$ converges?
+	$$\boxed{x<y^2}$$
+	\item If $b$ and $t$ are real numbers such that $0<|t|<|b|$, which of the following infinite series has sum $\frac{1}{b^2+t^2}$?
+	\begin{enumerate}
+		\item $a = -1$
+		\item $r = -\frac{t^2}{x^2}$
+	\end{enumerate}
+	$$\boxed{\frac{1}{b^2} \sum_{k=1}^{\infty}(-1)^k \bigg(\frac{t^2}{x^2}\bigg)^2}$$
+	\item What is the sum of the series $\sum_{n=1}^{\infty}\frac{(-2)^n}{e^{n+1}}$?
+		\begin{enumerate}
+			\item $\sum_{n=1}^{\infty} \frac{(-2)^n}{e^{n+1}} = \frac{-2}{e^2} + \frac{4}{e^3} - \frac{8}{e^4} + \frac{16}{e^5} + \cdots + \frac{(-2)^n}{e^{n+1}}$
+			\item $a_1 = \frac{-2}{e^2}$
+			\item $r= \frac{-2}{e}$
+		\end{enumerate}
+		$$S = \frac{-\frac{2}{e^2}}{1-\frac{-2}{e}} =\boxed{\frac{-2}{e^2+2e}}$$
+	\item What is the value of $\sum_{n=1}^{\infty} \frac{2^{n+1}}{3^n}$?
+	\begin{enumerate}
+		\item $\sum_{n=1}^{\infty} \frac{2^{n+1}}{3^n} = \frac{4}{3} + \frac{8}{9} - \frac{16}{27}  + \cdots + \frac{2^{n+1}}{3^n}$
+		\item $a_1 = \frac{4}{3}$
+		\item $r= \frac{2}{3}$
+	\end{enumerate}
+	$$S = \frac{4/3}{1 - 2/3} =\boxed{4}$$
+	\item Consider the geometric series $\sum_{n=1}^{\infty}a_n$ where $an > 0$ for all $n$. The first term of the series is $a_1 = 48$, and the third term is $a_3 = 12$. Which of the following statements about $\sum_{n=1}^{\infty}a_n$ is true?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{Let $r$ denote the common ratio of the geometric series. Then we have $a_2 = 48r$ and $a_3 = 48r^2$. We are also given that $a_3 = 12$, so we can solve for $r$ as follows: $12 = 48r^2 \quad \Rightarrow \quad r^2 = \frac{1}{4} \quad \Rightarrow \quad r = \frac{1}{2}$. Applying formula for the sum of a geometric series: $\sum_{n=1}^{\infty} a_n = \frac{a_1}{1-r} = \frac{48}{1-\frac{1}{2}} = 96$ So the statement that is true is: $\boxed{\sum_{n=1}^{\infty} a_n = 96}$}
+	\end{empheq}
+
+	\item Consider the series $\sum_{n=1}^{\infty}a_n$. If $a_1 = 16$ and $\frac{a_{n+1}}{a_n} = \frac{1}{2}$ for all integers $n\geq 1$, then $\sum_{n=1}^{\infty}a_n$ is
+		\begin{empheq}[box=\tcbhighmath]{equation*}
+			\parbox{6in}{We have $\frac{a_{n+1}}{a_n} = \frac{1}{2}$ for all $n\geq 1$. This means that $a_{n+k} = \frac{1}{2^k}a_n$. Thus, the series $\sum_{n=1}^{\infty}a_n$ can be written as $\sum_{n=1}^{\infty}a_n = a_1 + a_2 + a_3 + \cdots = a_1 + \frac{1}{2}a_1 + \frac{1}{2^2}a_1 + \cdots = a_1\left(1+\frac{1}{2}+\frac{1}{2^2}+\cdots\right)$ The sum of an infinite geometric series with first term $a$ and common ratio $r$ is $\frac{a}{1-r}$ (provided that $|r|<1$), so $\sum_{n=1}^{\infty}a_n = a_1\left(1+\frac{1}{2}+\frac{1}{2^2}+\cdots\right) = 16\left(1+\frac{1}{2}+\frac{1}{2^2}+\cdots\right) = 16\cdot\frac{1}{1-\frac{1}{2}} = \boxed{32}$}
+		\end{empheq}
+
+	\item What is the value of $\sum_{n=1}^{\infty} \frac{(-3)^{n+1}}{5^n}$?
+	\begin{enumerate}
+		\item $\sum_{n=1}^{\infty} \frac{(-3)^{n+1}}{5^n} = \frac{9}{5} - \frac{27}{25} + \frac{81}{125}  + \cdots + \frac{(-3)^{n+1}}{5^n}$
+		\item $a_1 = \frac{9}{5}$
+		\item $r= \frac{-3}{5}$
+	\end{enumerate}
+	$$S = \frac{9/5}{1+ \frac{3}{5}} = \boxed{\frac{9}{8}}$$
+	\item The sum of the infinite geometric series $\frac{3}{2} + \frac{9}{16} + \frac{27}{128} + \frac{81}{1,024} + \cdot$ is
+	\begin{enumerate}
+		\item $a_1 = \frac{3}{2}$
+		\item $r= \frac{3}{8}$
+	\end{enumerate}
+	$$S = \frac{\frac{3}{2}}{1-\frac{3}{8}} = \frac{3/2}{5/8} = \frac{12}{5} = \boxed{2.40}$$
+	\item What is the value of $\sum_{n=0}^{\infty} \big(-\frac{2}{3}\big)^n$?
+	\begin{enumerate}
+		\item $a_1 = 1$
+		\item $r= -\frac{2}{3}$
+	\end{enumerate}
+	$$S = \frac{1}{5/3} = \boxed{\frac{3}{5}}$$
+\end{enumerate}
+\section*{8.03}
+\begin{enumerate}
+	\item The $n$ term test can be used to determine divergence for which of the following series?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{k=1}^{\infty} \ln\big(\frac{k+1}{k}\big)$
+	      	\item $\sum_{k=0}^{\infty} (-1)^k \big(\frac{k}{2k+1}\big)$
+	      	\item $\sum_{k=1}^{\infty} \frac{3k^2-k^3}{5k^3}$
+	      \end{enumerate}
+		  $$\boxed{\text{II and III only}}$$
+	\item Which of the following series diverge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \cos(2n)$
+	      	\item $\sum_{n=1}^{\infty} \big(1+\frac{1}{n}\big)$
+	      	\item $\sum_{n=1}^{\infty} \big(n+\frac{1}{n^2}\big)$
+	      \end{enumerate}
+		  $$\boxed{\text{I, II, and III}}$$
+	\item If $a_n=\cos\big(\frac{\pi}{n}\big)$ for $n=1,2,\cdots$ , which of the following statements about $\sum_{n=0}^{\infty} a_n$ must be true?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{3in}{The series diverges and $\lim_{n\to\infty}\neq 0$.}
+	\end{empheq}
+\end{enumerate}
+\section*{8.04}
+\begin{enumerate}
+	\item Let $f$ be a positive, continuous, decreasing function. If $\int_{1}^{\infty}f(x)\,dx=5$, which of the following statements about the series $\sum_{n=1}^{\infty} f(n)$ must be true?
+	$$\boxed{\sum_{n=1}^{\infty} f(n) \text{ converges, and } \sum_{n=1}^{\infty}f(n) > 5}$$
+	\item Let $f$ be a positive, continuous, decreasing function such that $a_n=f(n)$. If $\sum_{n=1}^{\infty} a_n$ converges to $k$, which of the following must be true?
+	$$\boxed{\int_{1}^{\infty} f(x) \, dx \text{ converges}}$$
+	\item The integral test can be used to determine that which of the following statements about the infinite series $\sum_{n=1}^{\infty} \frac{e^{\frac{1}{n}}}{n^2}$
+	$$\boxed{\text{The series converges because } \int_{1}^{\infty} \frac{e^{\frac{1}{x}}}{x^2} \, dx =-1+e.}$$
+	\item Consider the infinite series $\sum_{n=1}^{\infty} \frac{1}{n^2}$. The integral test can be used to verify convergence of the series because $f(x)=\frac{1}{x^2}$ is positive, continuous, and decreasing for $x\geq 1$. Which of the following inequalities is true?
+	$$\boxed{\underbrace{\int_{2}^{\infty} \frac{1}{x^2} \, dx}_{0.5}  < \underbrace{\sum_{n=1}^{\infty} \frac{1}{n^2}}_{\frac{\pi^2}{6}} < \underbrace{1 + \int_{1}^{\infty} \frac{1}{x^2} \, dx}_{2}}$$
+	\item The integral test can be used to conclude that which of the following statements about the infinite series $\sum_{n=2}^{\infty} \frac{1}{n\ln n}$ is true?
+	$$\boxed{\text{The series diverges, and the terms of the series have limit 0.}}$$
+\end{enumerate}
+\section*{8.05}
+\begin{enumerate}
+	\item Which of the following series converge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}$ Since $\int_{1}^{\infty} \frac{1}{x^{1/2}} \, dx = \infty \therefore$ the series diverges.
+	      	\item $\sum_{n=1}^{\infty} \frac{3^n}{n!} = e^3 -1$
+	      	\item $\sum_{n=1}^{\infty} \big(\frac{e}{\pi}\big)^n = \frac{-e}{e-\pi}$
+	      \end{enumerate}
+		  $$\boxed{\text{II and III only}}$$
+	\item Which of the following series converge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $1+(-1)+1+\cdots + (-1)^{n-1}+\cdots$. Since $\int_{1}^{\infty} (-1)^{x-1} \, dx = \infty \therefore$ the series diverges.
+	      	\item $1+\frac{1}{3} + \frac{1}{5}+ \cdots + \frac{1}{2n-1}+\cdots$. Since $\int_{1}^{\infty} \frac{1}{2x-1} \, dx = \infty \therefore$ the series diverges.
+	      	\item $1+\frac{1}{3} + \frac{1}{3^2} + \cdots + \frac{1}{3^{n-1}}+\cdots$. Since $\sum_{n=1}^{\infty} \frac{1}{3^{n-1}} = \frac{3}{2} \therefore$ the series converges.
+	      \end{enumerate}
+		  $$\boxed{\text{III only}}$$
+	\item Which of the following series converge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \frac{|\sin n|}{n^2}$
+			  	\begin{empheq}[box=\tcbhighmath]{equation*}
+					\parbox{6in}{
+						We can use the comparison test with the convergent series $\sum_{n=1}^{\infty} \frac{1}{n^2}$ to show that $\sum_{n=1}^{\infty} \frac{|\sin n|}{n^2}$ converges. Note that $0\leq |\sin n| \leq 1$, so $\frac{|\sin n|}{n^2} \leq \frac{1}{n^2}$ for all $n$. Since $\sum_{n=1}^{\infty} \frac{1}{n^2}$ converges by the $p$-series test with $p=2>1$, we have that $\sum_{n=1}^{\infty} \frac{|\sin n|}{n^2}$ converges by the comparison test.}
+				\end{empheq}
+	      	\item $\sum_{n=1}^{\infty} e^{-n}$
+			  \begin{empheq}[box=\tcbhighmath]{equation*}
+				\parbox{6in}{Since $\sum_{n=1}^{\infty} e^{-n}$ is a geometric series with first term $e^{-1}$ and common ratio $r=e^{-1}<1$, it converges by the geometric series test.}
+			  \end{empheq}
+	      	\item $\sum_{n=1}^{\infty} \frac{n+1}{n^2+n}$
+	      \end{enumerate}
+		  \begin{empheq}[box=\tcbhighmath]{equation*}
+			\parbox{6in}{We can use the limit comparison test with the series $\sum_{n=1}^{\infty} \frac{1}{n}$ to show that $\sum_{n=1}^{\infty} \frac{n+1}{n^2+n}$ diverges. Note that $\frac{n+1}{n^2+n} = \frac{n+1}{n(n+1)} = \frac{1}{n}$ for all $n\geq 1$. Since $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges by the $p$-series test with $p=1<2$, we have that $\sum_{n=1}^{\infty} \frac{n+1}{n^2+n}$ also diverges by the limit comparison test.}
+		\end{empheq}
+		$$\boxed{\text{I and II only}}$$
+	\item What are all values of $p$ for which the infinite series $\sum_{n=1}^{\infty} \frac{n}{n^p+1}$ converges?
+	\begin{empheq}[box = \tcbhighmath]{equation*}
+		\parbox{6in}{We can use the limit comparison test to determine the values of $p$ for which the series converges. First, note that for all $p > 0$, we have $0 \leq \frac{n}{n^p+1} \leq \frac{n}{n^p} = \frac{1}{n^{p-1}}.$ The series $\sum_{n=1}^{\infty} \frac{1}{n^{p-1}}$ is a $p$-series, and converges if $p-1 > 1$, i.e. if $p > 2$. Thus, for $p > 2$, we have $0 \leq \frac{n}{n^p+1} \leq \frac{1}{n^{p-1}}$ for all $n$, and by the comparison test, the series $\sum_{n=1}^{\infty} \frac{n}{n^p+1}$ converges. Therefore, the series converges if and only if $p > 2$.}
+	  \end{empheq}
+	  $$\boxed{p > 2}$$
+	\item Which of the following series converge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n\sqrt{n}} = \zeta\big( \frac{3}{2}\big)$. Since $\int_{1}^{\infty} \frac{1}{n\sqrt{n}} \, dn = 2 \therefore\sum_{n=1}^{\infty} \frac{1}{n\sqrt{n}}$ converges.
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{3^n} = \frac{1}{2}$. Since the series is geometric and $r= \frac{1}{3} < 1 \therefore$ by the geometric series test  $\sum_{n=1}^{\infty} \frac{1}{3^n}$ converges.
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n\ln n}$. Since $\int_{1}^{\infty} \frac{1}{n\ln n} \, dn = \ln(\ln n) \big\rvert_{0}^{\infty} = \infty \therefore \sum_{n=1}^{\infty} \frac{1}{n\ln n}$ diverges.
+	      \end{enumerate}
+		  $$\boxed{\text{I and II only}}$$
+	\item What are all values of $p$ for which the series $\sum_{n=1}^{\infty} \frac{1}{n^{2p}+n}$ diverges?
+		  \begin{empheq}[box = \tcbhighmath]{equation*}
+			\parbox{6in}{Note that for any positive integer $n$, we have $n^{2p} + n \geq n^{2p}$. Therefore, we can write
+			$\frac{1}{n^{2p}+n} \leq \frac{1}{n^{2p}} = \frac{1}{n^{p}\cdot n^{p}}.$ Now, the series $\sum_{n=1}^{\infty} \frac{1}{n^{2p}}$ is a $p$-series, which converges if and only if $p > \frac{1}{2}$. Therefore, by the limit comparison test, the series $\sum_{n=1}^{\infty} \frac{1}{n^{2p}+n}$ diverges if and only if $p \leq \frac{1}{2}$.}
+		  \end{empheq}
+		  $$\boxed{p \leq \frac{1}{2}}$$
+	\item For what values of $p$ will both series $\sum_{n=1}^{\infty} \frac{1}{n^{2p}}$ and $\sum_{n=1}^{\infty} \big(\frac{p}{2}\big)^n$ converges?
+		  \begin{empheq}[box = \tcbhighmath]{equation*}
+			\parbox{6in}{Using the p-series test, we see that $\sum_{n=1}^{\infty} \frac{1}{n^{2p}}$ converges if $2p > 1$, or equivalently, $p > \frac{1}{2}$. Using the geometric series test, we see that $\sum_{n=1}^{\infty} \big(\frac{p}{2}\big)^n$ converges if $\big|\frac{p}{2}\big| < 1$, or equivalently, $|p| < 2$. Therefore, the series $\sum_{n=1}^{\infty} \frac{1}{n^{2p}}$ and $\sum_{n=1}^{\infty} \big(\frac{p}{2}\big)^n$ converge for $\boxed{\frac{1}{2} < p < 2}$.}
+		  \end{empheq}
+	\item What are all values of $p$ for which $\int_{1}^{\infty}\frac{1}{x^{2p}}\, dx$ converges?
+	$$\boxed{p > \frac{1}{2}}$$
+	\item Which of the following is a convergent $p$-series?
+	$$\boxed{\sum_{n=1}^{\infty} \bigg(\frac{1}{\sqrt{n}}\bigg)^3 =\sum_{n=1}^{\infty} \frac{1}{n^{3/2}}} $$
+	\item Which of the following is not a $p$-series?
+	$$\boxed{\sum_{n=1}^{\infty} \frac{1}{e^n}}$$
+	\item Which of the following is the harmonic series?
+	$$\boxed{\sum_{n=1}^{\infty} \frac{1}{n}}$$
+	\item Which of the following series converge?
+	      \begin{enumerate}
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$. Since the $\int_{1}^{\infty}\frac{1}{x^2}\, \mathrm{d}x = 1 \therefore \sum_{n=1}^{\infty} \frac{1}{n^2}$ converges.
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n}$. Since the $\int_{1}^{\infty} \frac{1}{x} \, \mathrm{d}x = \infty \therefore \sum_{n=1}^{\infty} \frac{1}{n}$ diverges. 
+	      	\item $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}} = (\sqrt{2}-1)\cdot \zeta\big(\frac{1}{2}\big)$. 
+	      	\begin{empheq}[box = \tcbhighmath]{equation*}
+				\parbox{6in}{To prove the convergence of the series $\sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n}}$, we can use the Alternating Series Test, which states that if a series $\sum_{n=1}^\infty (-1)^n b_n$ satisfies the following two conditions: The sequence $b_n$ is positive and monotonically decreasing (i.e., $0 < b_{n+1} \leq b_n$) and the $\lim_{n\to\infty} b_n = 0$. Then the series converges. In our case, we have $b_n = \frac{1}{\sqrt{n}}$, which is a positive, monotonically decreasing sequence. To see that $b_n$ is decreasing, note that $\frac{1}{\sqrt{n+1}} < \frac{1}{\sqrt{n}}$ since $\sqrt{n+1} > \sqrt{n}$ for all $n \geq 1$. Furthermore, we have $\lim_{n\to\infty} \frac{1}{\sqrt{n}} = 0$ since the denominator grows to infinity faster than the numerator. Thus, by the Alternating Series Test, we conclude that the series $\sum_{n=1}^\infty \frac{(-1)^n}{\sqrt{n}}$ converges.}
+			  \end{empheq}
+	      \end{enumerate}
+	\item Which of the following series diverge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{k=3}^{\infty} \frac{2}{k^2+1} = \frac{1}{5}\big(5\pi\cosh(\pi) - 12\big)$.
+	      	\item $\sum_{n=1}^{\infty} \big(\frac{6}{7}\big)^k = 6$
+	      	\item $\sum_{k=2}^{\infty} \frac{(-1)^k}{k} = 1 -\ln 2$
+	      \end{enumerate}
+		  $$\boxed{\text{None}}$$
+\end{enumerate}
+\section*{8.06}
+\begin{enumerate}
+	\item Which of the following series converges?
+	$$\boxed{\sum_{n=1}^{\infty} \frac{3n^2}{n^4+2n}}$$
+	\item Which of the following statements about the series $\sum_{n=1}^{\infty} \sin\big(\frac{1}{n}\big)$ is true?
+		$$\lim_{n\to\infty} \frac{\sin\big(\frac{1}{n}\big)}{\frac{1}{n}} = \lim_{n\to\infty} \frac{\sin n}{n} = 1$$ Since the harmonic series $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges, the series $\sum_{n=1}^{\infty} \sin\big(\frac{1}{n}\big)$ would also diverge by the limit comparison test.
+		$$\boxed{\text{The series diverges by limit comparison to the series $\sum_{n=1}^{\infty} \frac{1}{n}$}.}$$
+		
+	\item Which of the following series can be used with the limit comparison test to determine whether the series $\sum_{n=1}^{\infty} \frac{4^n}{5^n-n^2}$ converges or diverges?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{The limit comparison test looks at the limit of the ratio of general terms of the two positive series. If this limit is finite and greater than $0$, the two series either both converge or both diverge. For this series, $\lim_{n\to\infty}\frac{\frac{4^n}{5^n-n^2}}{\big(\frac{4}{5}\big)^n} = \lim_{n\to\infty} \bigg(\frac{4^n}{5^n-n^2} \cdot \frac{5^n}{4^n}\bigg) = \lim_{n\to\infty} \frac{1}{1-\frac{n^2}{5^n}} = 1$. Since the limit is finite and nonzero and the geometric series $\sum_{n=1}^{\infty} \big(\frac{4}{5}\big)^n$ converges, the series $\sum_{n=1}^{\infty} \frac{4^n}{5^n-n^2}$ will also converge by the limit comparison test.}
+	  \end{empheq}
+	  $$\boxed{\sum_{n=1}^{\infty} \bigg(\frac{4}{5}\bigg)^n}$$
+	\item Which of the following statements about the series $\sum_{n=1}^{\infty} \frac{2^n}{3^n+n}$ is true?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{The series $\sum_{n=1}^{\infty} \bigg(\frac{2}{3}\bigg)^n$ is a convergent geometric series. Since $0 < \frac{2^n}{3^n+n} \leq \frac{2^n}{3^n}$ for all $n$, the comparison test shows that the series$\sum_{n=1}^{\infty} \frac{2^n}{3^n+n}$ also converges}
+	\end{empheq}
+	$$\boxed{\text{The series converges by comparison to the series $\sum_{n=1}^{\infty} \bigg(\frac{2}{3}\bigg)^n$.}}$$
+	\item Which of the following series can be used with the limit comparison test to determine whether the series $\sum_{n=1}^{\infty} \frac{n^2}{n^3+1}$ converges or diverges?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{For this series, $\lim_{n\to\infty} \frac{\frac{n^2}{n^3+1}}{\frac{1}{n}} = \lim_{n\to\infty} \frac{n^3}{n^3+1} = 1$. Since the limit is finite and nonzero and the geometric series $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges, the series $\sum_{n=1}^{\infty} \frac{n^2}{n^3+1}$ will also converge by the limit comparison test.}
+	  \end{empheq}
+	$$\boxed{\sum_{n=1}^{\infty}\frac{1}{n}}$$
+	\item Consider the series $\sum_{n=1}^{\infty} a_n$ and $\sum_{n=1}^{\infty} b_n$, where $a_n>0$ and $b_n>0$ for $n\geq1$. If $\sum_{n=1}^{\infty} a_n$ converges, which of the following must be true?
+	$$\boxed{\text{If $b_n \leq a_n$, then $\sum_{n=1}^{\infty} b_n$ converges.}}$$
+	\item If $0<b_n<a_n$ for $n\geq 1$, which of the following must be true?
+	$$\boxed{\text{If $\sum_{n=1}^{\infty}a_n$ converges, then $\lim_{n\to \infty} b_n = 0$.}}$$
+	\item If $\sum_{n=1}^{\infty} a_n$ diverges and $0 \leq a_n \leq b_n$ for all $n$, which of the following statements must be true?
+	$$\boxed{\sum_{n=1}^{\infty} b_n \text{ diverges.}}$$
+\end{enumerate}
+\section*{8.07}
+\begin{enumerate}
+	\item Which of the following series converge?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n^2}$. Converges by $p$-seires test, i.e., $p = 2 > 1$.
+	      	\item $\sum_{n=1}^{\infty} \frac{1}{n}$. Diverges by $p$-seires test, i.e., $ p = 1$.
+	      	\item $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$. Converges by the alternating series test, i.e. $\frac{(-1)^{n+1}}{\sqrt{n+1}} \leq \frac{(-1)^{n}}{\sqrt{n}}$, 
+	      \end{enumerate}
+		  $$\boxed{\text{I and III only}}$$
+	\item The Taylor series for a function $f$ about $x = 0$ is given by $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{(2n+1)!}x^{2n}$ and converges to $f$ for all real numbers $x$. If the fourth-degree Taylor polynomial for $f$ about $x = 0$ is used to approximate $f\big(\frac{1}{2}\big)$ alternating series error bound?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{Since $f(x)=\frac{x^2}{3!} - \frac{x^4}{5!} +  \frac{x^6}{7!} - \frac{x^8}{9!} + \cdots$ the fourth-degree Taylor polynomial for $f$ is $P(x)= \frac{x^2}{3!} - \frac{x^4}{5!}$. $P\big(\frac{1}{2}\big)=\frac{1}{3!}\big(\frac{1}{2})^2 - \frac{1}{5!}\big(\frac{1}{2})^4$. Using the Taylor series for $f$ about $x = 0$, $\big(\frac{1}{2}\big) = \frac{1}{3!}\big(\frac{1}{2})^2 - \frac{1}{5!}\big(\frac{1}{2})^4 + \frac{1}{7!}\big(\frac{1}{2})^6 - \frac{1}{9!}\big(\frac{1}{2})^8 + \frac{1}{11!}\big(\frac{1}{2})^{10} - \cdots$. This is an alternating series and converges by the alternating series test. Therefore the alternating series error bound can be used to approximate this value using the first two terms of the series, which is the same as $P\big(\frac{1}{2}\big)$. The alternating series error bound using the first two terms in the series for $f\big(\frac{1}{2}\big)$ is the absolute value of the third term, $\frac{1}{7!}\big(\frac{1}{2})^6$, the first omitted term of the series, so $\bigg|f\big(\frac{1}{2}\big) - P\big(\frac{1}{2}\big) \leq \frac{1}{7!}\big(\frac{1}{2}\big)^6\bigg|$.}
+	\end{empheq}
+	$$\boxed{\frac{1}{2^6 \cdot 7!}}$$
+	\item The power series $\sum_{n=1}^{\infty} \frac{(x-5)^n}{2^nn^2}$ has radius of convergence $2$. At which of the following values of $x$ can the alternating series test be used with this series to verify convergence at $x$?
+	$$\boxed{4}$$
+	\item The alternating series test can be used to show convergence of which of the following alternating series?
+	      \begin{enumerate}[label=\Roman*.]
+	      	\item $4-\frac{1}{9} + 1 - \frac{1}{81}+ \frac{1}{4} - \frac{1}{729} + \frac{1}{16} - \cdots + a_n +\cdots$, where $a_n = \left\{ \begin{matrix}
+	      	      \frac{8}{2^n} & \text{if } n \text{ is odd} \\
+	      	      -\frac{1}{3^n} & \text{if } n \text{ is even}
+	      	\end{matrix}\right.\, $
+	      	\item $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5} -\frac{1}{6} +\frac{1}{7} -\frac{1}{8} + \cdots + a_n + \cdots$, where $a_n = \frac{(-1)^{n+1}}{n}$
+	      	\item $\frac{2}{3} - \frac{3}{5} + \frac{4}{7} - \frac{5}{9} +\frac{6}{11} - \frac{7}{13} +\frac{8}{15}-\cdots + a_n +\cdots$, where $a_n = (-1)^{n+1} \frac{n+1}{2n+1}$
+	      \end{enumerate}
+		  $$\boxed{\text{II only}}$$
+    \item Which of the following statements are true about the series $\sum_{n=2}^{\infty}a_n$, where $a_n =\frac{(-1)^n}{\sqrt{n}+ (-1)^n}$?
+    \begin{enumerate}[label=\Roman*.]
+        \item The series is alternating.
+        \item $|a_n+1|\leq |a_n|$ for all $n\geq 2$
+        \item $\lim_{n\to\infty}a_n = 0$
+    \end{enumerate}
+	$$\boxed{\text{I and III only}}$$
+    \item 
+    \begin{center}
+        \includegraphics*[width = 5in]{8.076.png}
+    \end{center}
+    Let $f$ be the function defined by $f(x)= \frac{2+\cos x}{x^2}$. The derivative of $f$ is $f'(x) = -\frac{x^2\sin x+ 2x(2+\cos x)}{x^4}$. The graph of the function $g$ defined by $g(x)=x^2\sin x+2x(2+\cos x)$ is shown above for $0 \leq x \leq 100$. Let $b_n=f(n)$ for all integers $n\geq 1$. Which of the following statements about the series $\sum_{n=1}^{\infty} (-1)^{n+1}b_n$ is true?
+	$$\text{The alternating series test cannot be used to determine convergence because the terms $b_n$ are not decreasing.}$$
+    \item The alternating series test can be used to show convergence for which of the following series?
+    \begin{enumerate}[label=\Roman*.]
+        \item $1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16} +\frac{1}{25} - \frac{1}{36} + \cdots + a_n + \cdots$, where $a_n = (-1)^{n+1}\frac{1}{n^2}$
+        \item $\sin 1 - \frac{\sin 2}{4} + \frac{\sin 3}{9} - \frac{\sin 4}{16} + \frac{\sin 5}{25} - \frac{\sin 6}{36} + \cdots + b_n + \cdots$, where $b_n = (-1)^{n+1} \frac{\sin n}{n^2}$
+        \item $\frac{1}{\sqrt{2}+1} - \frac{1}{\sqrt{2} - 1} + \frac{1}{\sqrt{3}+1} - \frac{1}{\sqrt{3}-1} + \frac{1}{\sqrt{4}+1} - \frac{1}{\sqrt{4} - 1} + \cdots + c_n + \cdots$, where $c_n = \left\{ \begin{matrix}
+            \frac{1}{\sqrt{k+1}+1} & \text{if } n = 2k-1 \\ \frac{-1}{\sqrt{k+1}-1} & \text{if } n = 2k \end{matrix}\right.\,$
+    \end{enumerate}
+	$$\boxed{\text{I only}}$$
+    \item Which of the following statements is true?
+    $$\boxed{\text{The series $\sum_{n=1}^{\infty} (-1)^{n+1} \frac{4n}{9+n^2}$ converges by the alternating series test.}}$$
+    \item If the series $S = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n^2}$ is approximated by the partial sum $S_k = \sum_{n=1}^{k} (-1)^{n+1} \frac{1}{n^2}$, what is the least value of $k$ for which the alternating series error bound guarantees that $|S-S_k| \leq \frac{9}{10,000}$?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{The alternating series error bound guarantees that $|S-S_k|\leq \frac{1}{(k+1)^2}$. $\frac{1}{(k+1)^2} \leq \frac{9}{10,000} \Longrightarrow \frac{10,000}{9} \leq (k+1)^2 \Longrightarrow \frac{100}{3} \leq k+1$. Therefore, $|S-S_k| \leq \frac{9}{10,000}$ is guaranteed by the alternating series error bound if $k\geq \frac{100}{3}-1 \approx 33.333 - 1 \approx 32.333$. The least $k$ satisfying this inequality is $k=33$.}
+	\end{empheq}
+	$$\boxed{33}$$
+    \item The series $\sum_{k=1}^{\infty} (-1)^{k+1}a_k$ converges to $S$ and $0<a_{k+1}<a_k$ for all $k$. If $S_n = \sum_{k=1}^{n} (-1)^{k+1} a_k$ is the $n$th partial sum of the series, which of the following statements must be true?
+	$$\boxed{|S-S_{15}| \leq a_{16}}$$
+    \item If the series $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{1}{2n+1}$ is approximated by the partial sum with $15$ terms, what is the alternating series error bound?
+	$$\boxed{S_{16} = \frac{1}{33}}$$
+\end{enumerate}
+\section*{8.08}
+\begin{enumerate}
+    \item Which of the following series are conditionally convergent i.e., if $\sum_{n=1}^{\infty} a_n$ converges but $\sum_{n=1}^{\infty} |a_n|$ diverges?
+    \begin{enumerate}[label=\Roman*.]
+        \item $\sum_{n=1}^{\infty} \frac{(-1)^n}{n}$, converges based on the alternating series test but $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges due to the $p$-series test. 
+        \item $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^3}$, based on the alternating series test and $\sum_{n=1}^{\infty} \frac{1}{n^3}$ converges due to the $p$-series test. 
+        \item $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$, converges based on the alternating series test but $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges due to the $p$-series test. 
+    \end{enumerate}
+	$$\boxed{\text{I and III only}}$$
+    \item Which of the following series converges for all real numbers $x$?
+	$$\lim_{n\to\infty} \bigg|\frac{a_{n+1}}{a_n}\bigg| = \lim_{n\to\infty} \Biggr|\frac{\frac{e^{n+1}x^{n+1}}{(n+1)n!}}{\frac{e^nx^n}{n!}}\Biggr| = \lim_{n\to\infty} \bigg|\frac{ex}{n+1}\bigg| = 0 < 1$$
+	$$\boxed{\sum_{n=1}^{\infty} \frac{e^nx^n}{n!}}$$
+    \item Which of the following series converge?
+    \begin{enumerate}[label=\Roman*.]
+        \item $\sum_{n=1}^{\infty} \frac{8^n}{n!}$
+        \begin{enumerate}
+			\item 
+			$\lim_{n\to\infty} \bigg|\frac{a_{n+1}}{a_n}\bigg| = \lim_{n\to\infty} \Biggr|\frac{\frac{8^{n+1}}{(n+1)n!}}{\frac{8^n}{n!}}\Biggr| =\lim_{n\to\infty} \bigg|\frac{8}{n+1} \bigg|   = 0 < 1$
+		\end{enumerate}
+        \item $\sum_{n=1}^{\infty} \frac{n!}{n^{100}}$
+        \begin{enumerate}
+		\item 
+		$\lim_{n\to\infty} \bigg|\frac{a_{n+1}}{a_n}\bigg| = \lim_{n\to\infty} \Biggr|\frac{\frac{(n+1)n!}{n^{101}}}{\frac{n!}{n^{100}}}\Biggr| =\lim_{n\to\infty} \bigg|\frac{n+1}{n} \bigg|  = 1 $
+	\end{enumerate}
+    	\item $\sum_{n=1}^{\infty} \frac{n+1}{(n)(n+2)(n+3)}$
+		\begin{enumerate}
+			\item 
+			We can use the limit comparison test with the series $\sum_{n=1}^{\infty} \frac{1}{n^2}$ to show that $\sum_{n=1}^{\infty} \frac{n+1}{(n)(n+2)(n+3)}$ converges. Let $L = \lim_{n\to\infty} \Big(\frac{n+1}{(n)(n+2)(n+3)} \cdot \frac{n^2}{1}\Big) = 1$. Since the limit converges to a finite value therefore the series $\sum_{n=1}^{\infty} \frac{n+1}{(n)(n+2)(n+3)}$ converges by the limit comparison test. 
+		\end{enumerate}
+    \end{enumerate}
+		$$\boxed{\text{I and III only}}$$
+    \item What are all values of $x$ for which the series $\sum_{n=1}^{\infty} \frac{n3^n}{x^n}$ converges?
+	$$\boxed{|x| > 3}$$
+	\item For what values of $p$ is the series $\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^p + 2}$ conditionally convergent?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{For $p-1 > 0$, or $p > 1$, the series $\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^p + 2}$ is s an alternating series with individual terms that decrease in absolute value to $0$. Therefore, $\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^p + 2}$ converges for $p>1$ by the alternating series test. The series $\sum_{n=1}^{\infty} \frac{n}{n_p} = \sum_{n=1}^{\infty} \frac{1}{n^{p-1}}$ is a $p$-series and therefore diverges for $p-1 \leq 1$, or $p\leq2$. Since $\sum_{n=1}^{\infty} \frac{n}{n^p} = \sum_{n=1}^{\infty} \frac{1}{n^{p-1}}$ diverges for $p\leq 2$, the series $\sum_{n=1}^{\infty} \frac{n}{n^p +2}$ diverges for $p\leq 2$ by the limit comparison test. Since the series $\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^p + 2}$ converges for $p>1$ and the series of absolute values $\sum_{n=1}^{\infty} \frac{n}{n^p +2}$ diverges for $p\leq2$, $\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^p + 2}$ is conditionally convergent for $1<p \leq 2$}.
+	\end{empheq}
+	$$\boxed{1 < p \leq 2 \text{ only}}$$
+   	\item Which of the following series is conditionally convergent?
+	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{The series $\sum_{n=1}^{\infty} (-1)^{n+1} \frac{17 + \sqrt{n}}{n}$ converges by the alternating series test: $\lim_{x\to\infty} \frac{17+\sqrt{n}}{n} = 0$ if $f(x) = \frac{17 +\sqrt{x}}{x}$,  then $f'(x) = \frac{-17}{x^2} - \frac{1}{2^{3/2}}< 0$ for $x> 0$, showing that the terms $\frac{17 +\sqrt{x}}{x}$ decrease as $n$ increases. The series 
+		$\sum_{n=1}^{\infty} \frac{17 + \sqrt{n}}{n}$ diverges, however, by the comparison with the divergent $p$-series $\sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}$, since $\frac{17+\sqrt{n}}{n} > \frac{\sqrt{n}{n} > \frac{\sqrt{n}}{n} = \frac{1}{\sqrt{n}}}$ for all $n$. Therefore the series $\sum_{n=1}^{\infty} (-1)^{n+1} \frac{17 + \sqrt{n}}{n}$ is  conditionally convergent.}
+	\end{empheq}
+	$$\boxed{\sum_{n=1}^{\infty} (-1)^{n+1} \frac{17 + \sqrt{n}}{n}}$$
+   	\item Which of the following statements is true about the series $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt[3]{n}}$?
+   	\begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{The series $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt[3]{n}}$ is an alternating series with individual terms that decreases in absolute value to $0$. Therefore, it converges by the alternating series test. The series of absolute values $\sum_{n=1}^{\infty} \frac{1}{\sqrt[3]{n}}$ diverges, as it is a $p$-series with $p=\frac{1}{3}<1$. Therefore $\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt[3]{n}}$ is conditionally convergent.}
+	\end{empheq}
+	$$\boxed{\text{The series converges conditionally.}}$$
+   	\item If the ratio test is applied to the series $\sum_{n=0}^{\infty} \frac{n\pi^{2n}}{17^n}$, which of the following inequalities results, implying that the series converges?
+	   \begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{
+			Let $a_n = \frac{n\pi^{2n}}{17^n}$. The ratio test would look at the limit $L = \lim_{n\to\infty} \frac{a_{n+1}}{a_n} = \lim_{n\to\infty} \frac{\frac{(n+1)\pi^{2(n+1)}}{17^{n+1}}}{\frac{n\pi^{2n}}{17^n}} = \lim_{n\to\infty} \frac{17^n(n+1)\pi^{2n+2}}{17^{n+1}n\pi^{2n}} = \lim_{n\to\infty} \frac{(n+1)\pi^2}{17n}$. Since $L = \frac{\pi^2}{17} < 1$  the series converges.
+		}
+	\end{empheq}
+	$$\boxed{\lim_{n\to\infty} \frac{\pi^2(n+1)}{17n} < 1}$$
+   	\item If $a_n>0$ for all $n$ and $\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = 3$, which of the following series converges?
+	   \begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{
+			Since $\lim_{n\to\infty} \frac{\frac{a_{n+1}}{5^{n+1}}}{\frac{a_n}{5^n}} = \lim_{n\to\infty} \Big( \frac{a_{n+1}}{a_n} \cdot \frac{5^n}{5^{n+1}}\Big) = \frac{1}{5} \lim_{n\to\infty} \frac{a_{n+1}}{a_n} = \frac{3}{5} < 1$, this series would converge by the ratio test.
+		}
+	\end{empheq}
+	$$\boxed{\sum_{n=1}^{\infty} \frac{a_n}{5^n}}$$
+   	\item What are all positive values of $p$ for which the series $\sum_{n=1}^{\infty} \frac{n^p}{4^n}$ will converge?
+	   \begin{empheq}[box=\tcbhighmath]{equation*}
+		\parbox{6in}{
+			Let $a_n = \frac{n^p}{4^n}$. Then $\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = \lim_{n\to\infty} \Big(\frac{(n+1)^p}{4^{n+1}}\cdot \frac{4^n}{n^p}\Big) = \lim_{n\to\infty} \Big(\frac{1}{4} \cdot \Big(\frac{n+1}{n}\Big)^p\Big)$ for all positive values of $p$. By the ratio test, the series will converge for all $p>0$.
+		}
+	\end{empheq}
+	$$\boxed{p > 0}$$
+   	\item Consider the series $\sum_{n=1}^{\infty} \frac{e^n}{n!}$. If the ratio test is applied to the series, which of the following inequalities results, implying that the series converges?
+	$$\boxed{\lim_{n\to\infty} \frac{e}{n+1} < 1}$$
+\end{enumerate}
+\end{document}
