@@ -1,0 +1,459 @@
+\documentclass[12pt]{article}
+\usepackage[paper=letterpaper,margin=2cm]{geometry}
+
+\usepackage{mathtools, amssymb, amsthm, amsmath}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small {© 2022 All Rights Reserved, Aiden Rosenberg}}
+\rfoot{Page \thepage}
+
+\setlength{\droptitle}{-6em}
+
+\title{AP Classroom Problems Unit 10}
+\author{Aiden Rosenberg}
+\date{April 1, 2023 A.D}
+
+\begin{document}
+\maketitle
+\section*{10.11}
+\subsection*{10.11.1}
+\begin{enumerate}
+	\item The Taylor polynomial of degree $100$ for the function $f$ about $x = 3$ is given by $P(x)=(x-3)^2 - \frac{(x-3)^4}{2!} + \frac{(x-3)^6}{3!} + \cdots + (-1)^{n+1} \frac{(x-3)^{2n}}{n!} + \cdots - \frac{(x-3)^{100}}{50!}$. What is the value of $f^{(30)}(3)$?
+	      $$\frac{f^{xxx}(3)}{30!} = \frac{1}{15!} \Longrightarrow \boxed{f^{xxx}(3) = \frac{30!}{15!}}$$
+	\item Let $f$ be the function given by $f(x)=\ln(3-x)$. The third-degree Taylor polynomial for $f$ about $x=2$ is
+	      \begin{enumerate}
+	      	\item $f(x) = \ln(3-x) \Longrightarrow f(2) = 0$
+	      	\item $f'(x) = \frac{-1}{(3-x)} \Longrightarrow f'(2) = -1$
+	      	\item $f''(x) = \frac{-1}{(3-x)^2} \Longrightarrow f''(2) = -1$
+	      	\item $f'''(x) = \frac{-2}{(3-x)^3} \Longrightarrow f''(2) = -2$
+	      \end{enumerate}
+	      $$\boxed{P_3(x) = -(x-2) - \frac{(x-2)^2}{2}-\frac{(x-2)^3}{3}}$$
+	\item The third-degree Taylor polynomial for a function $f$ about $x=4$ is $\frac{(x-4)^3}{512} - \frac{(x-4)^2}{64} + \frac{(x-4)}{4} + 2$. What is the value of $f'''(4)$?
+	      $$\frac{f'''(3)}{3!} = \frac{1}{512} \Longrightarrow \boxed{f'''(4) = \frac{3}{256}}$$
+	\item Let $P(x)=3-3x^2+6x^4$ be the fourth-degree Taylor polynomial for the function $f$ about $x=0$. What is the value of $f^{(4)}(0)$?
+	      $$\frac{f^{iv}(0)}{4!} = 6 \Longrightarrow \boxed{f'''(0) = 144}$$
+	\item
+	      \begin{table}[h]
+	      	\centering
+	      	\begin{tabular}{|c||c|c|c|c|c|}
+	      		\hline
+	      		$x$  & $g(x)$ & $g'(x)$ & $g''(x)$ & $g'''(x)$ & $g^{(4)}(x)$ \\ \hline
+	      		$-3$ & $1$    & $-2$    & $-4$     & $2$       & $16$         \\ \hline
+	      	\end{tabular}
+	      \end{table}
+	          
+	      Selected values of a function $g$ and its first four derivatives are shown in the table above. What is the approximation for the value of $g(-2)$ obtained by using the third-degree Taylor polynomial for g
+	      about $x=-3$?
+	      $$P_3(x) = 1-2(x+3)-2(x+3)^2 + \frac{(x+3)^3}{3}\biggr\rvert_{x=-2} = 1-2-2+\frac{1}{3} = \boxed{\frac{-8}{3}}$$
+	          
+	\item Let $T_{3}(x)$ be the third-degree Taylor polynomial for $f(x)=x^3$ about $x=2$. Which of the following statements is true?
+	      \begin{center}
+	      	\fbox{\parbox{6in}{$T_3(x)=8+12(x-2)+6(x-2)^2+(x-2)^3$, and $T_3(x)$ provides a good approximation for  $f(x)$ for all real numbers $x$.}}
+	      \end{center}
+	\item Let $f$ be the function defined by $f(x)=\sqrt{x}$. What is the approximation for the value of $\sqrt{3}$ obtained by using the second-degree Taylor polynomial for $f$ about $x=4$?
+	      $$P_2(x) = 2+ \frac{x-4}{4} - \frac{(x-4)^2}{64}\biggr\rvert_{x=3} = 2 - \frac{1}{4} - \frac{1}{64} = \boxed{\frac{111}{64}}$$
+	\item The $n$th derivative of a function $f$ at $x=0$ is given by $f^{n}(0)=(-1)^{n} \frac{n+1}{(n+2)\cdot 2^{n}}$ for all $n\geq0$. Which of the following is the Maclaurin series for $f$?
+	      $$\boxed{\frac{1}{2}-\frac{1}{3}x + \frac{3}{32}x^2 - \frac{1}{60}x^3 + \cdots}$$
+	\item Which of the following is the fourth-degree Taylor $f(x) = \ln x$ about $x=1$?
+	      $$\boxed{P_4(x)=(x-1)-\frac{1}{2}(x-1)^2+\frac{1}{3}(x-1)^3-\frac{1}{4}(x-1)^4}$$
+	\item
+	      \begin{center}
+	      	\includegraphics*[width = 3in]{10.11.01.png}
+	      \end{center}
+	      The function $f$ has derivatives of all orders. Shown above is the graph of $y=P_{25}(x)$, the 25th-degree Taylor polynomial for $f$ about $x=0$. Which of the following could be the graph of $f$?
+	      \begin{center}
+	      	\boxed{\includegraphics*[width=3in]{10.11.0.2.png}}
+	      \end{center}
+	\item Let $f$ be a function with third derivative $f'''(x)=(4x+1)^{3/2}$. What is the coefficient of $(x-2)^4$ in the fourth-degree Taylor polynomial for $f$  about $x=2$?
+	          
+	      \begin{enumerate}
+	      	\item $f^{iv}(x) = 6\sqrt{4x+1}$
+	      \end{enumerate}
+	      $$\boxed{a_4 = \frac{f^{iv}(2)}{4!} = \frac{3}{4}}$$
+\end{enumerate}
+
+\subsection*{10.11.2}
+\begin{enumerate}
+	\item Which is the best of the following polynomial approximations to $\cos 2x$ near $x = 0$?
+	      \begin{enumerate}
+	      	\item $f(x) = \cos 2x \Longrightarrow f(0) = 1$
+	      	\item $f'(x) = -2 \sin 2x \Longrightarrow f'(0) = 0$
+	      	\item $f'(x) = -4 \cos 2x \Longrightarrow f''(0) = -4$
+	      \end{enumerate}
+	      $$\boxed{P_{2}(x) = 1-2x^2}$$
+	\item Let $P(x)=3x^2-5x^3+7x^4+3x^5$
+	      be the fifth-degree Taylor polynomial for the function $f$ about $x = 0$. What is the value of $f'''(0)$?
+	      $$\boxed{f'''(0) = -5 \cdot 3! = -30}$$
+	\item Let $P$ be the second-degree Taylor polynomial for $e^{-2x}$ about $x=3$. What is the slope of the line tangent to the graph of $P$ at $x =3$?
+	      \begin{enumerate}
+	      	\item $f(x) = e^{-2x} \Longrightarrow f(3) = e^{-6}$
+	      	\item $f'(x) = -2 e^{-2x} \Longrightarrow f'(3) = -2e^{-6}$
+	      	\item $f'(x) = 4 e^{-2x} \Longrightarrow f''(3) = 4e^{-6}$
+	      \end{enumerate}
+	      $$P_2(x) = e^{-6} - 2e^{-6}(x-3) + 2e^{-6}(x-3)^2$$
+	      $$P'_2(x) = - 2e^{-6} + 4e^{-6} (x-3) = 2e^{-6}(2x-7)$$
+	      $$\boxed{P'_2(3) = -2e^{-6}}$$
+	\item Let $f$ be a function with $f(3) = 2$, and $f'(3) = -1$, $f''(3) = 6$, and $f'''(3) = 12$. Which of the following is the third-degree Taylor polynomial for $f$ about $x = 3$?
+	      $$\boxed{P_3(x)= 2 - (x - 3) + 3(x - 3)^2 + 2(x-3)^3}$$
+	\item 
+	      \begin{center}
+	      	\includegraphics*[width = 2in]{10.11.2.01.png}
+	      \end{center}
+	      The figure above shows the graph of a function $f$. Which of the following could be the second-degree Taylor polynomial for $f$ about $x = 2$?
+	      $$\boxed{P_2(x)=2+(x-2)+(x-2)^2}$$
+	\item Let $f$ be a function having derivatives of all orders for $x>0$
+	      such that $f(3)=2$, $f'(3)=-1$, $f''(3)=6$, and $f'''(3)=12$. Which of the following is the third-degree Taylor polynomial for $f$ about $x=3$?
+	      $$\boxed{P_3(x)= 2 - (x - 3) + 3(x - 3)^2 + 2(x-3)^3}$$
+\end{enumerate}
+\section*{10.12}
+\begin{enumerate}
+	\item Let $f$ be a function that has derivatives of all orders for all real numbers, and let $P_{3}(x)$ be the third-degree Taylor polynomial for $f$ about $x = 0$. The Taylor series for $f$ about $x = 0$ converges at $x = 1$, and $\big|f^{(n)}(x)\big| \leq \frac{n}{n+1}$, for $1 \leq n \leq 4$ and all values of $x$. Of the following, which is the smallest value of $k$ for which the Lagrange error bound guarantees that $|f(1)-P_3(1)| \leq k$?
+	$$\max_{1 \leq n \leq 4} f^{4}(x) = \frac{4}{5}$$
+	$$R(x) \leq \frac{|x-c|^{n+1}}{(n+1)!} \cdot \max|f^{(n+1)}(z)| \biggr\rvert_{n=3} = \frac{(1-0)^4}{(3+1)!} \cdot \frac{4}{5}$$
+	$$\left| f(1)-P_3(1) \right| \leq \boxed{ \frac{4}{5} \cdot \frac{1}{4!}}$$
+	
+	\item The function $f$ has derivatives of all orders for all real numbers, and $f(4) (x)=e^{\sin x}$. If the third-degree Taylor polynomial for $f$ about $x=0$ is used to approximate f on the interval $[0,1]$, what is the Lagrange error bound for the maximum error bound for the maximum error on the interval $[0,1]$?
+	$$\max_{0\leq x \leq 1} f^{(4)}(x) =\max_{0\leq x \leq 1} e^{\sin x} = e^{\sin (1)} $$
+	$$|f(1)-P_{3}(1)| \leq \frac{e^{\sin (1)}}{4!}\cdot (1)^4 \approx \boxed{0.097}$$
+	\item The Taylor series for a function $f$ about $x=2$ is given by $\sum_{n=0}^{\infty} (-1)^n \frac{3n+1}{2^n} (x-2)^n$ and converges to $f$ for $0<x<4$. If the third-degree Taylor polynomial for $f$ about $x=2$ is used to approximate $f\big(\frac{9}{4}\big)$, what is the alternating series error bound?
+		\begin{align*}
+			\left|f\left(\frac{9}{4}\right) - P_{3}\left(\frac{9}{4}\right)\right| &\leq \left[\frac{13}{16}(x-2)^4 \right]_{x=\frac{9}{4}} \\
+			&\leq \frac{13}{16}\left(\frac{9}{4}-2\right)^4 \\ 
+			&\leq \boxed{\frac{13}{16 \cdot 4^4}}
+		\end{align*}
+	\item Let $f$ be a polynomial function with nonzero coefficients such that $f(x)=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4$. $T_3(x)$ is the third-degree Taylor polynomial for $f$ about $x=c$ such that $T_3(x)=b_0+b_1(x-c)+b_2(x-c)^2+b_3(x-c)^3$. Based on use of the Lagrange error bound, $f(x)-T_3(x)$ must equal which of the following?
+	\begin{align*}
+		f(x) 		&= a_0 + a_{1}x + a_{2}x^{2} + a_{3}x^{3} + a_{4}x^{4}\\
+		f^{i}(x) 	&= a_1 + 2a_{2}x + 3a_{3}x^{2} + 4a_{4}x^{3}\\
+		f^{ii}(x) 	&= 2a_{2} + 6a_{3}x + 12a_{4}x^{2}\\
+		f^{iii}(x)	&= 6a_{3} + 24 a_{4}x\\
+		f^{iv}(x) 	&= 24a_{4}
+	\end{align*}
+	$$\max f^{iv}(x) = 24a_{4}$$
+	$$\left|f(x)-T_{3}(x)\right| \leq \frac{24a_{4}}{4!} (x-c)^4 = \boxed{a_{4}(x-c)^4}$$
+	\item 
+	      \begin{table}[h]
+	      	\centering
+			\def\arraystretch{2}
+	      		\begin{tabular}{|l|l|l|}
+					\hline
+					$\displaystyle\max_{0 \leq x \leq 1.2} |f^{(5)}(x)| = 8.4$  &   
+					$\displaystyle\max_{0 \leq x \leq 1.2} |f^{(6)}(x)| = 58.8$ &   
+					$\displaystyle \max_{0 \leq x \leq 1.2} |f^{(7)}(x)| = 411.8$ \\ [0.2cm] 
+					\hline
+	      		\end{tabular}
+	      \end{table}
+Let $P(x)$ be the fifth-degree Taylor polynomial for a function $f$ about $x=0$ . Information about the maximum of the absolute value of selected derivatives of $f$  over the interval $0 \leq x \leq 1.2$ is given in the table above. Of the following, which is the smallest value of $k$ for which the Lagrange error bound guarantees that $|f(1.2)-P_{5}(1.2)| \leq k$?
+$$\left|f(1.2)- P_{5}(1.2)\right| \leq \frac{58.8}{6!}(1.2)^{6} \approx \boxed{0.244}$$
+\end{enumerate}    
+\section*{10.13}
+\begin{enumerate}
+	\item For what values of $x$ does the series $\sum_{n=0}^{\infty} \frac{(2x-3)^n}{n!}$ converge?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The series $\sum_{n=0}^{\infty} \frac{(2x-3)^n}{n!}$ converges for all $x$, since it is the Taylor series expansion of the function $e^{2x-3}$, which is defined for all real numbers. Alternatively, using the ratio test, we have $\lim_{n\to\infty} \left| \frac{(2x-3)^{n+1}}{(n+1)!} \cdot \frac{n!}{(2x-3)^n} \right| = \lim_{n\to\infty} \frac{2x-3}{n+1} = 0$, which is less than 1 for all $x$.}
+	      \end{empheq}
+	      $$\boxed{\text{The series converges for all real numbers $x$.}}$$
+	             
+	\item The power series $\sum_{n=0}^{\infty} a_n (x-1)^n$ converges conditionally at $x = 5$. Which of the following statements about $n=0$ convergence of the series at $x = -4$ is true?
+	      $$\boxed{\text{The series diverges at } x = -4.}$$
+	\item What are the values of $x$ for which the series $\sum_{n=1}^{\infty}\big(\frac{2}{x^2+1}\big)^n$ converges?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The given series is a geometric series with first term $a_1=\frac{2}{x^2+1}$ and common ratio $r=\frac{2}{x^2+1}$. For a geometric series to converge, we need $|r|<1$. Therefore, we have $\left|\frac{2}{x^2+1}\right|<1$, which simplifies to $|x^2+1|>2$. Since $|x^2+1|$ is always nonnegative, we can take the absolute value signs off and write the solution as $x^2+1>2$ or $x^2>1$, which implies $x<-1$ or $x>1$. Therefore, the series $\sum_{n=1}^{\infty}\big(\frac{2}{x^2+1}\big)^n$ converges for $x<-1$ or $x>1$.}
+	      \end{empheq}
+	      $$\boxed{x < -1 \text{ and } x > 1 \text{ only}}$$
+	\item The interval of convergence of $\sum_{n=0}^{\infty} \frac{(x-1)^n}{3^n}$ is 
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The given series is a geometric series with first term $a_1=\frac{x-1}{3}$ and common ratio $r=\frac{x-1}{3}$. For a geometric series to converge, we need $|r|<1$. Therefore, we have $\left|\frac{x-1}{3}\right|<1$, which simplifies to $|x-3|<3$. There are solotions to this inequlity when $-2<x<4$. Checking the endpoints: $\sum_{n=0}^{\infty} \frac{(4-1)^n}{3^{n}} = \infty \therefore$ diverges and $\sum_{n=0}^{\infty} \frac{(-2-1)^n}{3^n} = \sum_{n=0}^{\infty} (-1)^n \therefore $ diverges. Therefore, the interval of convergence of $\sum_{n=0}^{\infty} \frac{(x-1)^n}{3^n}$ is $-2 < x<4$.}
+	      \end{empheq}
+	      $$\boxed{-2 < x<4}$$
+	\item The radius of convergence for the power series $\sum_{n=1}^{\infty} \frac{(x-3)^{2n}}{n}$ is equal to $1$. What is the interval of convergence?
+	      $$\boxed{2 < x < 4}$$
+	\item What is the interval of convergence of the power series $\sum_{n=1}^{\infty} \frac{(x-3)^n}{n \cdot 2^n}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The interval of convergence of the power series $\sum_{n=1}^{\infty} \frac{(x-3)^n}{n \cdot 2^n}$ can be found using the ratio test: $$\lim_{n\to\infty} \left| \frac{\frac{(x-3)^{n+1}}{(n+1) \cdot 2^{n+1}}}{\frac{(x-3)^n}{n \cdot 2^n}} \right| = \lim_{n\to\infty} \left| \frac{x-3}{2} \cdot \frac{n}{n+1} \right| = \frac{|x-3|}{2}$$ Therefore, the series converges absolutely if $\frac{|x-3|}{2} < 1$, i.e., if $|x-3| < 2$, and diverges if $\frac{|x-3|}{2} > 1$, i.e., if $|x-3| > 2$. When $\frac{|x-3|}{2} = 1$, the series may converge or diverge, so we need to test the endpoints $x=1$ and $x=5$. At $x=1$, the series becomes $\sum_{n=1}^{\infty} \frac{(-2)^n}{n \cdot 2^n}$, which converges by the alternating series test. At $x=5$, the series becomes $\sum_{n=1}^{\infty} \frac{2^n}{n \cdot 2^n} = \sum_{n=1}^{\infty} \frac{1}{n}$, which diverges by the harmonic series test. Therefore, the interval of convergence is $\boxed{1 \leq x < 5}$.}
+	      \end{empheq}
+	\item The power series $\sum_{n=0}^{\infty} a_n(x-3)^n$ converges at $x=5$. Which of the following must be true?
+	      $$\boxed{\text{The series converges at } x=2.}$$
+	\item What are all values of $x$ for which the series $\sum_{n=1}^{\infty} \frac{(-1)^n}{n} \big(x + \frac{3}{2}\big)^n$
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The interval of convergence of the power series $\sum_{n=1}^{\infty} \frac{(-1)^n}{n} \big(x + \frac{3}{2}\big)^n$ can be found using the ratio test: $$\lim_{n\to\infty} \left| \frac{\frac{(x+\frac{3}{2})^{n+1}}{(n+1)}} {\frac{(x+\frac{3}{2})^n}{n}} \right| = \lim_{n\to\infty} \left| \frac{n(x+\frac{3}{2})}{(n+1)}\right| = \frac{3}{2} + x$$ Therefore, the series converges absolutely if $|\frac{3}{2} + x | < 1$, and diverges if $|\frac{3}{2} + x | > 1$. When $|\frac{3}{2} + x | = 1$, the series may converge or diverge, so we need to test the endpoints $x=-\frac{5}{2}$ and $x=-\frac{1}{2}$. At $x=-\frac{5}{2}$, the series becomes $\sum_{n=1}^{\infty} \frac{1}{n}$, which diverges by the harmonic series test. At $x=\frac{-1}{2}$, the series becomes $\sum_{n=1}^{\infty} \frac{(-1)^n}{n \cdot 2^n}$, which converges by the alternating series test. Therefore, the interval of convergence is $\boxed{-\frac{5}{2} < x \leq -\frac{1}{2} }$}
+	      \end{empheq}
+	              
+	\item What are all of the values of $x$ for which the series $\sum_{n=1}^{\infty} \frac{(x-2)^n}{n\cdot 3^n}$ converges?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The interval of convergence of the power series $\sum_{n=1}^{\infty} \frac{(x-2)^n}{n\cdot 3^n}$ can be found using the ratio test: $$\lim_{n\to\infty} \left| \frac{\frac{(x-2)^{n+1}}{(n+1) \cdot 3^{n+1}}}{\frac{n \cdot 3^n}{(x-2)^n}} \right| = \lim_{n\to\infty} \left| \frac{n(x-2)}{3(n+1)}\right| = \frac{x-2}{3}$$ Therefore, the series converges absolutely if $\frac{|x-2|}{3} < 1$, i.e., if $|x-3| < 3$, and diverges if $\frac{|x-2|}{3} > 1$, i.e., if $|x-2| > 3$. When $\frac{|x-2|}{3} = 1$, the series may converge or diverge, so we need to test the endpoints $x=-1$ and $x=5$. At $x=-1$, the series becomes $\sum_{n=1}^{\infty} \frac{(-1)^n}{n}$, which converges by the alternating series test. At $x=5$, the series becomes $\sum_{n=1}^{\infty} \frac{1}{n}$, which diverges by the harmonic series test. Therefore, the interval of convergence is $\boxed{-1 \leq x < 5}$.}
+	      \end{empheq}
+	\item What is the radius of convergence for the power series $\sum_{n=0}^{\infty} \frac{(x-4)^n}{2 \cdot 3^{n+1}}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{To determine the values of $x$ for which the series converges, we can use the ratio test. Applying the ratio test, we have: $$\lim_{n \to \infty} \left| \frac{(x-2)^{n+1}}{(n+1)\cdot 3^{n+1}} \cdot \frac{n \cdot 3^n}{(x-2)^n} \right| = \lim_{n \to \infty} \left| \frac{x-2}{3} \cdot \frac{n}{n+1} \right| = \frac{|x-2|}{3}$$ The series converges if this limit is less than 1, and diverges if it is greater than 1. Thus, we have the inequality: $|\frac{x-4}{3}| < 1$ Solving for $|x-4|$, we get: $|x-4| < 3$. This means that the power series converges for $x$ in the interval $(1, 7)$. The radius of convergence $R$ of the power series is half the length of the interval of convergence. Therefore, we have: $\boxed{R = \frac{7-1}{2} = 3}$}
+	      \end{empheq}
+	\item What is the radius of convergence for the series $\sum_{n=0}^{\infty} \frac{(x-5)^n}{2^n \cdot (2n+3)^2}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{To determine the values of $x$ for which the series converges, we can use the ratio test. Applying the ratio test, we have: $$\lim_{n \to \infty} \left| \frac{(x-5)^{n+1}}{(2n+5)^2\cdot 2^{n+1}} \cdot \frac{2^n \cdot (2n+3)^2}{(x-5)^n} \right| = \lim_{n \to \infty} \left| \frac{x-5}{2} \cdot \frac{(2n+3)^2}{(2n+5)^2} \right| = \frac{|x-5|}{2}$$ The series converges if this limit is less than 1, and diverges if it is greater than 1. Thus, we have the inequality: $|\frac{x-5}{2}| < 1$ Solving for $|x-5|$, we get: $|x-5| < 2$. This means that the power series converges for $x$ in the interval $(3, 7)$. The radius of convergence $R$ of the power series is half the length of the interval of convergence. Therefore, we have: $\boxed{R = \frac{7-3}{2} = 2}$}
+	      \end{empheq}
+	\item The coefficients of the power series $\sum_{n=0}^{\infty}a_n(x-2)^n$ satisfy $a_0=5$ and $a_n = \big(\frac{2n+1}{3n-1}\big) a_{n-1}$ for all $n\geq 1$. The radius of convergence of the series is
+	      $$\frac{a_n}{a_{n-1}} = \frac{2n+1}{3n-1}$$
+	      $$\lim_{n\to\infty} \left| \frac{2n+1}{3n-1} \cdot \frac{(x-2)^n}{(x-2)^{n-1}} \right| = \frac{|x-2|}{3} < 1$$
+	      $$|x-2| < \boxed{\frac{3}{2}}$$
+	\item What is the radius of convergence of the series $\sum_{n=0}^{\infty} \frac{(x-4)^{2n}}{3^n}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{To determine the values of $x$ for which the series converges, we can use the ratio test. Applying the ratio test, we have: $$\lim_{n \to \infty} \left| \frac{(x-4)^{2(n+1)}}{3^{n+1}} \cdot \frac{3^n}{(x-4)^{2n}} \right| = \lim_{n \to \infty} \frac{|x-4|^2}{3} = \frac{|x-4|^2}{3}$$ The series converges if this limit is less than 1, and diverges if it is greater than 1. Thus, we have the inequality: $\frac{|x-4|^2}{3}< 1$. Solving for $|x-4|$, we get: $|x-4| < \sqrt{3}$. his means that the series converges for $x$ in the interval $(4-\sqrt{3}, 4+\sqrt{3})$. The radius of convergence $R$ of the power series is half the length of the interval of convergence. Therefore, we have: $\boxed{R = \frac{(4+\sqrt{3})-(4-\sqrt{3})}{2} = \sqrt{3}}$}
+	      \end{empheq}
+	\item What is the interval of convergence for the series $\sum_{n=1}^{\infty} \frac{(-1)^n (x-2)^n}{n \cdot 5^n}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The interval of convergence of the power series $\sum_{n=1}^{\infty} \frac{(x-2)^n}{n\cdot 3^n}$ can be found using the ratio test: $$\lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \lim_{n \to \infty} \left| \frac{(-1)^{n+1} (x-2)^{n+1}}{(n+1) \cdot 5^{n+1}} \cdot \frac{n \cdot 5^n}{(-1)^n (x-2)^n} \right|= \lim_{n \to \infty} \frac{|x-2|}{5} \cdot \frac{n}{n+1} = \frac{|x-2|}{5}$$ Therefore, the series converges absolutely if $\frac{|x-2|}{5} < 1$, i.e., if $|x-2| < 5$, and diverges if $\frac{|x-2|}{5} > 1$, i.e., if $|x-2| > 5$. When $\frac{|x-2|}{3} = 1$, the series may converge or diverge, so we need to test the endpoints $x=-3$ and $x=7$. At $x=-3$, the series becomes $\sum_{n=1}^{\infty} \frac{1}{n}$, which diverges by the harmonic series test.  At $x=7$, the series becomes $\sum_{n=1}^{\infty} \frac{(-1)^n}{n}$, which converges by the alternating series test.. Therefore, the interval of convergence is $\boxed{-3 < x \leq 7}$.}
+	      \end{empheq}
+	\item Which of the following statements about the power series $\sum_{n=0}^{\infty} n! \cdot x^{2n}$ is true? 
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{To determine the radius of convergence, we apply the ratio test: $\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = \lim_{n\to\infty} \left|\frac{(n+1)! \cdot x^{2(n+1)}}{n! \cdot x^{2n}}\right| = \lim_{n\to\infty} |(n+1)x^2| = \infty$, so the series diverges for all $x \neq 0$. Therefore, $\boxed{\text{the series converges for } x=0 \text{ only.}}$}
+	      \end{empheq}
+\end{enumerate}
+\section*{10.14}
+\subsection*{10.14.1}
+\begin{enumerate}
+	\item The Taylor polynomial of degree 100 for the function $f$ about $x = 3$ is given by $P(x) = (x-3)^2 - \frac{(x-3)^4}{2!} + \frac{(x-3)^6}{3!} + \cdots + (-1)^{n+1} \frac{(x-3)^{2n}}{n!}+ \cdots - \frac{(x-3)^{100}}{50!}$
+	      $$\boxed{\text{Reference } \# 1 \text{ from } \S 10.11}$$
+	\item Let $f$ be a function with second derivative $f''(x) = \sqrt{1+3x}$. The coefficient of $x^3$ in the Taylor series for $f$ about $x = 0$ is
+	      \begin{enumerate}
+	      	\item $f'''(x) = \frac{3}{2\sqrt{3x+1}}$
+	      	\item $f'''(0) = \frac{3}{2}$
+	      \end{enumerate}
+	      $$a_3 = \frac{f'''(0)}{3!} = \boxed{\frac{1}{4}}$$
+	\item Let $f$ be the function given by $f(x)=\ln(3-x)$. The third-degree Taylor polynomial for $f$ about $x=2$ is
+	      \begin{enumerate}
+	      	\item $f(x) = \ln(3-x) \Longrightarrow f(2) = 0$
+	      	\item $f'(x) = \frac{-1}{3-x} \Longrightarrow f'(2) = -1$
+	      	\item $f''(x) = \frac{-1}{(3-x)^2} \Longrightarrow f''(2) = -1$
+	      	\item $f'''(x) = \frac{-2}{(3-x)^3} \Longrightarrow f'''(2) = -2$
+	      \end{enumerate}
+	      $$\boxed{P_{3}(x) = -(x-2)-\frac{(x-2)^2}{2}-\frac{(x-2)^3}{3}}$$
+	      
+	\item What is the coefficient of $x^6$ in the Taylor series for $\frac{e^{3x^2}}{2}$ about $x=0$?
+	      \begin{align*}
+	      	e^{x}              & = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!}                                 \\
+	      	e^{3x^2}           & = 1 + 3x^2 + \frac{9x^4}{2!} + \frac{27x^6}{3!} + \cdots + \frac{x^{n(3x^2)}}{n!}                   \\
+	      	\frac{e^{3x^2}}{2} & = \frac{1}{2} + \frac{3x^2}{2} + \frac{9x^4}{4} + \frac{9x^6}{4} + \cdots + \frac{x^{n(3x^2)}}{2n!} 
+	      \end{align*}
+	      $$\boxed{a_{6} = \frac{9}{4}}$$
+	      
+	\item If $f(x)=x \cdot \sin(2x$), which of the following is the Taylor series for $f$ about $x=0$?
+	      \begin{align*}
+	      	\sin(x)          & \approx x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots                  \\
+	      	\sin(2x)         & \approx 2x - \frac{8x^3}{3!} + \frac{32x^5}{5!} - \frac{128x^7}{7!} + \cdots           \\
+	      	x \cdot \sin(2x) & \approx \boxed{2x^2 - \frac{8x^4}{3!} + \frac{32x^6}{5!} - \frac{128x^8}{7!} + \cdots} 
+	      \end{align*}
+	\item Let $f$ be the function defined by $f(x)=\sqrt{x}$. What is the approximation for the value of $\sqrt{3}$ obtained by using the second-degree Taylor polynomial for $f$ about $x=4$?
+	      \begin{enumerate}
+	      	\item $f(x) = \sqrt{x} \Longrightarrow f(4) = 2$
+	      	\item $f'(x) = \frac{1}{2\sqrt{x}} \Longrightarrow f'(4) = \frac{1}{4}$
+	      	\item $f''(x) = \frac{1}{4x\cdot\sqrt{x}} \Longrightarrow f''(4) = \frac{-1}{32}$
+	      \end{enumerate}
+	      $$P_{2}(x) = 2 + \frac{1}{4}(x-4) -\frac{1}{64} (x-4)^2$$
+	      $$P_{2}(3) = 2- \frac{1}{4} - \frac{1}{64} = \boxed{\frac{111}{64}} $$
+	\item Which of the following is the Maclaurin series for $\frac{1}{(1-x)^2}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{We are given a geometric series in the form $\sum_{n=0}^{\infty}ax^n = a + ar + ar^2 + ar^3 + \cdots$, where $a$ is the first term and $r$ is the common ratio. It is known that this series converges to the sum $S=\frac{a}{1-x}$. We can rewrite $\frac{1}{(1-x)^2}$ as $\frac{1}{1-(2x-x^2)}$. Let $r = (2x-x^2)$. Substituting this value of $r$ in the formula for the geometric series, we get:
+	      		$1 + (2x-x^2) + (2x-x^2)^2 + (2x-x^2)^3 + \cdots$. Simplifying the terms using the binomial theorem, we get: $\boxed{1+ 2x + 3x^2 + 4x^3} -11x^4 +6x^5-x^6$.}
+	      \end{empheq}
+	\item The $n$th derivative of a function $f$ at $x=0$ is given by $f^n(0)=(-1)^n \frac{n+1}{(n+2)^{2n}}$ for all $n\geq0$. Which of the following is the Maclaurin series for $f$?
+	      \begin{enumerate}
+	      	\item $f(0) = \frac{1}{2}$
+	      	\item $f'(0) = -\frac{1}{3}$
+	      	\item $f''(0) = \frac{3}{16}$
+	      	\item $f'''(0) = -\frac{1}{10}$
+	      \end{enumerate}
+	      $$\boxed{f(x) = \frac{1}{2} - \frac{1}{3}x + \frac{3}{32}x^2 -\frac{1}{60}x^3 + \cdots}$$
+	\item Which of the following is the Maclaurin series for the function $f$ defined by $f(x)=1+x^2+\cos x$?
+	      \begin{enumerate}
+	      	\item $f(x) = 1+ x^2 + \cos x \Longrightarrow f(0) = 2$
+	      	\item $f^{i}(x) = 2x - \sin x \Longrightarrow f^{i}(0) = 0$
+	      	\item $f^{ii}(x) = 2- \cos x \Longrightarrow f^{ii}(0) = 1$
+	      	\item $f^{iii}(x) = \sin x \Longrightarrow f^{iii}(0) = 0$
+	      	\item $f^{iv}(x) = \cos x \Longrightarrow f^{iv}(0) = 1$
+	      \end{enumerate}
+	      $$\boxed{P_{4}(x) = 2+\frac{x^2}{2} + \frac{x^4}{24}}$$
+	\item Which of the following are the first four nonzero terms of the Maclaurin series for the function $g$ defined by $g(x)=(1+x)e^{-x}$?
+	      \begin{enumerate}
+	      	\item $g(x) = \frac{1+x}{e^x} \Longrightarrow g(0) = 1$
+	      	\item $g^{i}(x) = \frac{-x}{e^x} \Longrightarrow g^{i}(0) = 0$
+	      	\item $g^{ii}(x) = \frac{x-1}{e^x} \Longrightarrow g^{ii}(0) = -1$
+	      	\item $g^{iii}(x) = \frac{2-x}{e^x} \Longrightarrow g^{iii}(0) = 2$
+	      	\item $g^{iv}(x) = \frac{x-3}{e^x} \Longrightarrow g^{iv}(0) = -3$
+	      \end{enumerate}
+	      $$\boxed{P_{4}(x) = 1- \frac{1}{2}x^2 + \frac{1}{3}x^3 - \frac{1}{8} x^4}$$
+	\item A series expansion of $\frac{\sin t}{t}$ is
+	      \begin{align*}
+	      	\sin t           & = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \cdots         \\
+	      	\frac{\sin t}{t} & = \boxed{1 - \frac{t^2}{3!} + \frac{t^4}{5!} - \frac{t^6}{7!} + \cdots} 
+	      \end{align*}
+	\item Which is the best of the following polynomial approximations to $\cos 2x$ near $x = 0$?
+	      \begin{align*}
+	      	\cos x  & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\
+	      	\cos 2x & = \boxed{1 - 2x^2} + \frac{2x^4}{3} - \frac{4x^6}{46} + \cdots  
+	      \end{align*}
+	\item The function $f$ has derivatives of all orders for all real numbers with $f(0) = 3$, $f'(0) = -4$, $f''(0) = 2$, and $f'''(0) = 1$. Let $g$ be the function given by $g(x)=\int_{0}^{x}f(t) \, dt$. What is the third-degree Taylor polynomial for $g$ about $x = 0$?
+	      $$P_{3} = 3-4x+x^2 + \frac{x^3}{6}$$
+	      $$g(x) = \int_{0}^{x} \Big( 3-4t+t^2 + \frac{t^3}{6}\Big) \, dt = \boxed{3x-2x^2+ \frac{1}{3}x^3} + \frac{1}{24}x^4$$
+	\item Let $f$ be a function having derivatives of all orders for $x>0$ such that $f(3)=2$, $f'(3)=-1$, $f''(3)=6$, and $f'''(3)=12$. Which of the following is the third-degree Taylor polynomial for $f$ about $x=3$?
+	      $$\boxed{P_{3}(x) = 2-(x-3)+3(x-3)^2+2(x-3)^3}$$
+\end{enumerate}
+\subsection*{10.14.2}
+\begin{enumerate}
+	\item The Taylor series for $\ln x$ centered at $x=1$, is $\sum_{n=1}^{\infty}(-1)^{n+1}\frac{(x-1)^n}{n}$. Let $f$ be the function given by the sum of the first three nonzero terms of this series. The maximum value of $|\ln x-f(x)|$ for $0.3 \leq x \leq 1.7$ is
+	      \begin{align*}
+	      	h(x) & = \left|\ln x - \Big((x-1)- \frac{1}{2}(x-1)^2 + \frac{1}{3}(x-1)^3\Big)\right| \\
+	      	h(x) & = \left|\ln x - (x-1) + \frac{1}{2}(x-1)^2 - \frac{1}{3}(x-1)^3\right|          
+	      \end{align*}
+	      $0=h'(x) = x^{2}-3x-\frac{1}{x}+3$ when $x=1$. Testing the endpoints and critical values i.e. $h(0.3)=0.145$, $h(1) = 0$, \& $h(1.7) = 0.202$ therefore there is a maximum value of $|\ln x-f(x)|$ for $0.3 \leq x \leq 1.7$ at $t=0.3$ of $\boxed{0.145}$.
+	      
+	          
+	\item The Taylor series for a function $f$ about $x = 0$ is given by $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{(2n+1)!} x^{2n}$ and converges to $f$ for all real numbers $x$. If the fourth-degree Taylor polynomial for $f$ about $x = 0$ is used to approximate $f\big(\frac{1}{2}\big)$ alternating series error bound?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{Since $f(x)=\frac{x^2}{3!} - \frac{x^4}{5!} +  \frac{x^6}{7!} - \frac{x^8}{9!} + \cdots$ the fourth-degree Taylor polynomial for $f$ is $P(x)= \frac{x^2}{3!} - \frac{x^4}{5!}$. $P\big(\frac{1}{2}\big)=\frac{1}{3!}\big(\frac{1}{2})^2 - \frac{1}{5!}\big(\frac{1}{2})^4$. Using the Taylor series for $f$ about $x = 0$, $f\big(\frac{1}{2}\big) = \frac{1}{3!}\big(\frac{1}{2})^2 - \frac{1}{5!}\big(\frac{1}{2})^4 + \frac{1}{7!}\big(\frac{1}{2})^6 - \frac{1}{9!}\big(\frac{1}{2})^8 + \frac{1}{11!}\big(\frac{1}{2})^{10} - \cdots$. This is an alternating series and converges by the alternating series test. Therefore the alternating series error bound can be used to approximate this value using the first two terms of the series, which is the same as $P\big(\frac{1}{2}\big)$. The alternating series error bound using the first two terms in the series for $f\big(\frac{1}{2}\big)$ is the absolute value of the third term, $\frac{1}{7!}\big(\frac{1}{2})^6$, the first omitted term of the series, so $\bigg|f\big(\frac{1}{2}\big) - P\big(\frac{1}{2}\big) \bigg| \leq \frac{1}{7!}\big(\frac{1}{2}\big)^6$.}
+	      \end{empheq}
+	      $$\boxed{\frac{1}{2^6 \cdot7!}}$$
+	\item If the series $S=\sum_{n=1}^{\infty} (-1)^{n+1} \frac{1}{n^2}$ is is approximated by the partial sum $S_k = \sum_{n=1}^{k} (-1)^{n+1} \frac{1}{n^2}$, what is the least value of $k$ for which the alternating series error bound guarantees that $|S-S_k| \leq \frac{9}{10,000}$?
+	      \begin{empheq}[box=\tcbhighmath]{equation*}
+	      	\parbox{6in}{The alternating series error bound guarantees that $|S-S_k|\leq \frac{1}{(k+1)^2}$. $\frac{1}{(k+1)^2} \leq \frac{9}{10,000} \Longrightarrow \frac{10,000}{9} \leq (k+1)^2 \Longrightarrow \frac{100}{3} \leq k+1$. Therefore, $|S-S_k| \leq \frac{9}{10,000}$ is guaranteed by the alternating series error bound if $k\geq \frac{100}{3}-1 \approx 33.333 - 1 \approx 32.333$. The least $k$ satisfying this inequality is $k=33$.}
+	      \end{empheq}
+	      $$\boxed{33}$$
+	\item The series $\sum_{k=1}^{\infty} (-1)^{k+1}a_k$ converges to $S$ and $0 < a_{k+1} < a_k$ for all $k$. If $S_n = \sum_{k=1}^{n}(-1)^{k+1}a_k$ is the $n$th partial sum of the series, which of the following statements must be true?
+	      $$\boxed{\Big|S-S_{16}\Big| = \frac{1}{33}}$$
+	\item If the series $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{1}{2n+1}$ is approximated by the partial sum with $15$ terms, what is the alternating series error bound?
+	      $$\Big|S-S_{115}\Big| \leq a_{16} = \boxed{\frac{1}{33}}$$
+\end{enumerate}
+\subsection*{10.14.3}
+\begin{enumerate}
+	\item For $x>0$ the power series $1-\frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdots + (-1)^n \frac{x^{2n}}{(2n+1)!}$
+	      $$\boxed{\frac{\sin x}{x}}$$
+	\item A function $f$ has has Maclaurin series given by $1+ \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!} + \cdots + \frac{x^{2n}}{(2n)!}$ Which of the following is an expression for $f(x)$?
+	      $$\boxed{\frac{1}{2}\big(e^{x} + e^{-x}\big)}$$
+	\item Let $f$ be the function defined by $f(x)=\frac{1}{1-x}$. Which of the following is the Maclaurin series for $f'$?
+	      $$f(x) = \sum_{n=1}^{\infty} x^{n}$$
+	      $$\boxed{f'(x) = \sum_{n=1}^{\infty} nx^{n-1}}$$
+	\item Let $f$ be the function with $f(0)=0$ and derivative $f'(x)=\frac{1}{1+x^7}$. Which of the following is the Maclaurin series for $f$?
+	      $$f'(x) = 1 - x^7 + x^{14} -x^{21} + \cdots$$
+	      $$\boxed{f(x) = x-\frac{x^8}{8} + \frac{x^{15}}{15}-\frac{x^{22}}{22} + \cdots}$$
+	\item Which of the following is the Maclaurin series for $\frac{1}{(1-x)^2}$
+	      $$\boxed{\text{Reference } \# 7 \text{ from } \S 10.14.1}$$
+	\item Which of the following is the Maclaurin series for $e^{3x}$?
+	      \begin{align*}
+	      	e^x    & = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots                \\
+	      	e^{3x} & = \boxed{1 + 3x + \frac{9x^2}{2!} + \frac{27x^3}{3!} + \frac{81x^4}{4!} + \cdots} 
+	      \end{align*}
+	\item Let $f$ be the function given by $f(x)=\frac{1}{(2+x)}$. What is the coefficient of $x^3$ in the Taylor series for $f$ about $x = 0$?
+	      \begin{align*}
+	      	f(x) & = \frac{1}{(2+x)}                                                  \\ 
+	      	f(x) & = \frac{1/2}{1+\frac{x}{2}}                                        \\
+	      	f(x) & = \frac{1}{2} - \frac{x}{4}+ \frac{x^2}{8}-\frac{x^3}{16} + \cdots 
+	      \end{align*}
+	      $$\boxed{a_{3} = \frac{-1}{16}}$$
+	\item The Maclaurin series for $\frac{1}{1-x}$ is $\sum_{n=0}^{\infty} x^n$. Which of the following is a power series expansion for $\frac{1}{1-x^2}$
+	      $$\boxed{x^2+x^4+x^6+x^8 +\cdots}$$
+	\item What is the coefficient of $x^2$ in the Taylor series for $\frac{1}{(1+x)^2}$ about $x = 0$?
+	      \begin{enumerate}
+	      	\item $f(x) = \frac{1}{(1+x)^2} \Longrightarrow f(0) = 1$
+	      	\item $f'(x) = \frac{-2}{(1+x)^3} \Longrightarrow f'(0) = -2$
+	      	\item $f''(x) = \frac{6}{(1+x)^4} \Longrightarrow f''(0) = 6$
+	      \end{enumerate}
+	      $$P_{2}(x) = 1-2x+3x^2$$
+	      $$\boxed{a_3 = 3}$$
+	\item The coefficient of $x^6$ in the Taylor series expansion about $x=0$ for $f(x)=\sin(x^2)$ is
+	      \begin{align*}
+	      	\sin(x)   & \approx x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots         \\
+	      	\sin(x^2) & \approx x^2 - \frac{x^6}{3!} + \frac{x^{10}}{5!} - \frac{x^{14}}{7!} + \cdots 
+	      \end{align*}
+	      $$\boxed{a_6 = -\frac{1}{6}}$$
+\end{enumerate}
+\subsection*{10.14.4}
+\begin{enumerate}
+	\item If $f(x)=x \cdot \sin(2x)$, which of the following is the Taylor series for $f$ about $x=0$?
+		$$\boxed{\text{Reference } \# 5 \text{ from } \S 10.14.1}$$
+	\item A function $f$ has Maclaurin series given by $\frac{x^4}{2!} + \frac{x^5}{3!} + \frac{x^6}{4!} + \cdots + \frac{x^{n+3}}{(n+1)!} + \cdots$. Which of the following is an expression for $f(x)$? 
+	\begin{enumerate}
+		\item $f(x)=x^{2}e^{x}-x^{3}-x^{2} \Longrightarrow f(0) = 0$
+		\item $f^{i}(x) = 2xe^{x}+e^{x}x^{2}-3x^{2}-2x \Longrightarrow f^{i}(0) = 0$
+		\item $f^{ii}(x) = e^{x}x^{2}+4e^{x}x-6x+2e^{x}-2 \Longrightarrow f^{ii}(0) = 0$
+		\item $f^{iii}(x) = e^{x}x^{2}+6e^{x}x+6e^{x}-6 \Longrightarrow f^{iii}(0) = 0$
+		\item $f^{iv}(x) = e^{x}x^{2}+8e^{x}x+12e^{x} \Longrightarrow f^{iv}(0) = 12$
+		\item $f^{v}(x) = e^{x}x^{2}+10e^{x}x+20e^{x} \Longrightarrow f^{v}(0) = 20$
+		\item $f^{vi}(x) = ee^{x}x^{2}+12e^{x}x+30e^{x} \Longrightarrow f^{vi}(0) = 30$
+	\end{enumerate}
+	$$P_{6}(x) = \frac{x^4}{2!} + \frac{x^5}{3!} + \frac{x^6}{4!}$$
+	$$\boxed{f(x)=x^{2}e^{x}-x^{3}-x^{2}}$$
+	\item The sum of the series $1 + \frac{2^1}{1!} + \frac{2^2}{2!}+ \frac{2^3}{3!} + \cdots + \frac{2^n}{n!}$ is
+	$$\boxed{e^2}$$
+	\item Which of the following is the Maclaurin series for the function $f$ defined by $f(x)=1+x^2+\cos x$?
+		\begin{align*}
+			f(x) &= 1+x^2+\cos x 	&\Longrightarrow f(0) = 2\\
+			f^{i}(x) &= 2x-\sin(x) 	&\Longrightarrow f^{i}(0) = 0 \\
+			f^{ii}(x) &= 2-\cos(x) 	&\Longrightarrow f^{ii}(0) = 1\\
+			f^{iii}(x) &= \sin(x) 	&\Longrightarrow f^{iii}(0) = 0\\
+			f^{iv}(x) &= \cos(x) 	&\Longrightarrow f^{iv}(0) = 1\\
+		\end{align*}
+		$$\boxed{P_{4}(x) = 2+ \frac{x^2}{2} + \frac{x^4}{24}}$$
+	\item What is the sum of the infinite series $1- \big(\frac{\pi}{2}\big)^2 \frac{1}{3!} + \big(\frac{\pi}{2}\big)^4\frac{1}{5!} - \big(\frac{\pi}{2}\big)^6 \frac{1}{7!} + \cdots \big(\frac{\pi}{2}\big)^{2n} \frac{(-1)^n}{(2n+1)!} + \cdots$
+	$$\sum_{n=0}^{\infty} \frac{(-1)^{n}(x)^{2n}}{(2n+1)!} = \frac{\sin x}{x}$$
+	$$\frac{\sin x}{x} \biggr\rvert_{x= \frac{\pi}{2}} = \boxed{\frac{2}{\pi}}$$
+	\item A series expansion of $\frac{\sin t}{t}$ is
+	$$\boxed{\text{Reference } \# 11 \text{ from } \S 10.14.1}$$
+	\item What is the sum of the series $1+\ln 2 + \frac{(\ln 2)^2}{2!} + \cdots + \frac{(\ln 2)^n}{n!} + \cdots$?
+	$$\sum_{n=0}^{\infty} \frac{x^{n}}{n!} = e^{x} \biggr\rvert_{x= \ln 2} = \boxed{2}$$
+\end{enumerate}
+\section*{10.15}
+\begin{enumerate}
+	\item Let $f$ be the function defined by $f(x)=\frac{1}{1-x}$. Which of the following is the Maclaurin series for $f'$?
+	$$\boxed{\text{Reference } \# 3 \text{ from } \S 10.14.3}$$
+	\item The second-degree Taylor polynomial for $f(x)=\frac{\cos x}{1-x}$ about $x=0$ is
+		\begin{enumerate}
+			\item $f(x) = \frac{\cos x}{1-x} \Longrightarrow f(0) = 1$
+			\item $f'(x) = \frac{-\sin\left(x\right)\left(1-x\right)+\cos\left(x\right)}{\left(1-x\right)^{2}} \Longrightarrow f'(0) = 1$
+			\item $f''(x) = \frac{-x^{2}\cos\left(x\right)+2x\cos\left(x\right)+2x\sin\left(x\right)+\cos\left(x\right)-2\sin\left(x\right)}{\left(1-x\right)^{3}} \Longrightarrow f''(0) = 1$
+		\end{enumerate}
+		$$\boxed{P_{2}(x) = 1+x+\frac{x^2}{2}}$$
+	\item Let $f$ be the function with $f(0)=0$ and derivative $f'(x)=\frac{1}{1+x^7}$ Which of the following is the Maclaurin series for $f$?
+	$$\boxed{\text{Reference } \# 4 \text{ from } \S 10.14.3}$$
+	\item Let $f$ be the function defined by $f(x)=e^{2x}$. Which of the following is the Maclaurin series for $f'$, the derivative of $f$?
+	\begin{align*}
+		e^x 	& = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots + \frac{x^n}{n!}               \\
+		f(x) = e^{2x} & = 1 + (2x) + \frac{(2x)^2}{2!} + \frac{(2x)^3}{3!} + \frac{(2x)^4}{4!}   + \cdots + \frac{(2x)^n}{n!} \\
+		f'(x) = 2e^{2x} &= \boxed{2 + 2(2x) + \frac{2(2x)^2}{2!} + \frac{2(2x)^3}{3!}  + \cdots + \frac{2(2x)^n}{n!}}
+	\end{align*}
+	\item For $x>0$, the power series $1- \frac{x^2}{3!} + \frac{x^4}{5!} - \frac{x^6}{7!} + \cdot + (-1)^n\frac{x^{2n}}{(2n+1)!}$ converges to which of the following?
+	$$\boxed{\text{Reference } \# 1 \text{ from } \S 10.14.3}$$
+	\item $\int_{0}^{x} \sin (t^6) \, dt$
+		\begin{align*}
+			\sin t &= t-\frac{t^3}{3!} + \frac{t^5}{5!} - \cdots + \frac{(-1)^{n+1} \cdot t^{2n-1}}{(2n-1)!} + \cdots \\
+			\sin t^6 &= t^6 - \frac{t^{18}}{3!} + \frac{t^{30}}{7!}- \cdots + \frac{(-1)^{n+1} \cdot t^{6(2n-1)}}{(2n-1)!} + 	\cdots \\
+			\int_{0}^{x} \sin (t^6) \, dt &= \boxed{\frac{x^7}{7} - \frac{x^{19}}{19 \cdot 3!} + \frac{x^{31}}{31 \cdot 5!} - \cdots + \frac{(-1)^{n+1}\cdot x^{6(2n-1)+1}}{(6(2n-1)+1)\cdots(2n-1)!}}
+		\end{align*}
+	\item What is the coefficient of $x^2$in the Taylor series for $\sin^2 x$ about $x=0$?
+	\begin{align*}
+		\sin x &= x-\frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + \frac{(-1)^{n+1} \cdot x^{2n-1}}{(2n-1)!} + \cdots \\
+		\sin^2 x &= x^2 - \frac{x^4}{3} + \frac{2x^6}{45} - \cdots + \frac{(-1)^n \cdot 2^{2k-1} \cdot x^{2k}}{(2k)!} + \cdots
+	\end{align*}
+	$$\boxed{1}$$
+	\item Which of the following is the Maclaurin series for $e^{3x}$?
+	$$\boxed{\text{Reference } \# 6 \text{ from } \S 10.14.3}$$
+	\item The Maclaurin series for $\frac{1}{1-x}$ is $\sum_{n=0}^{\infty} x^n$. Which of the following is a power series expansion for $\frac{1}{1-x^2}$
+	$$\boxed{x^2+x^4+x^6+x^8 +\cdots}$$
+	\item What is the coefficient of $x^2$ in the Taylor series for $\frac{1}{(1+x)^2}$ about $x = 0$?
+	$$\boxed{\text{Reference } \# 9 \text{ from } \S 10.14.3}$$
+	\item The Maclaurin series for the function $f$ is given by $f(x)=\sum_{n=0}^{\infty} \big(-\frac{x}{4}\big)^n$. What is the value of $f(3)$?
+	$$f(3) = \sum_{n=0}^{\infty} (-\frac{3}{4})^n = \frac{1}{1- (-\frac{3}{4})} = \boxed{\frac{4}{7}}$$
+	\item The series $1-x^2 +\frac{x^4}{2!}- \frac{x^6}{3!}+ \frac{x^8}{4!} + \cdots + (-1)^n\frac{x^{2n}}{n!}$ converges to which of the following?
+		\begin{align*}
+			e^x		& = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} \\
+			e^{-x^{2}} 	& = \boxed{1 - x^2 + \frac{x^4}{2!} - \frac{x^6}{3!} + \frac{x^8}{4!} - \cdots + (-1)^n \cdot \frac{x^{2n}}{n!}} 
+		\end{align*}
+		$$\boxed{e^{-x^{2}}}$$
+\end{enumerate}
+\end{document}
